@@ -1,0 +1,107 @@
+.navbar-first {
+    background-color: transparent;
+  }
+  
+  .navbar-first-content {
+    display: flex;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    /* background: #ffffff; */
+    text-align: center;
+    /* box-shadow: 0 1px 2px #00000014, inset 0 -1px #ced7e0; */
+    font-weight: bold;
+  }
+  
+  .navbar-first-content a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 1em;
+    transition: color 0.3s ease-in-out;
+    display: inline-block;
+  }
+  
+  .navbar-first-content a:hover {
+    transform: scale(1.03);
+  }
+  
+  .navbar-first-logo-name {
+    font-size: 24px;
+    font-weight: bold;
+    transition: color 0.3 ease;
+  }
+  
+  .navbar-first-logo-name a:hover {
+    color: #b4b4b4;
+  }
+  
+  .navbar-first-apply-mentorship {
+    border-radius: 100px;
+    padding: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .navbar-first-apply-mentorship:hover {
+    background-color: #ffffff;
+  }
+  
+  .navbar-first-apply-mentorship:hover  a{
+    color: #3a3a3a;
+    transform: scale(1.03);
+  }
+  
+  .navbar-first-items-right-col {
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .navbar-first-items a{
+    transition: color 0.3s ease;
+    border-radius: 100px;
+    padding: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .navbar-first-items a:hover {
+    color: #000000;
+    background-color: #ffffff;
+    transform: scale(1.03);
+  }
+  
+  .navbar-first-auth-buttons button {
+    margin-left: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 550;
+    height: 40px;
+    width: 100px;
+  }
+  
+  .navbar-first-login-button {
+    background-color: #ffffff;
+    color: #000;
+    border: 1px solid #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .navbar-first-login-button:hover {
+    background-color: #9a9a9a;
+    transform: scale(1.05);
+  }
+  
+  .navbar-first-register-button {
+    background: #6938ef;
+    color: #fff;
+    border: 1px solid #000;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .navbar-first-register-button:hover {
+    background-color: #521ee1;
+    transform: scale(1.05);
+  }

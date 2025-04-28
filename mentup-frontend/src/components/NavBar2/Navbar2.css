@@ -1,0 +1,159 @@
+.navbar-secondary {
+  background-color: transparent;
+}
+
+.navbar-secondary-content {
+  display: flex;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  text-align: center;
+  /* box-shadow: 0 1px 2px #00000014, inset 0 -1px #ced7e0; */
+  font-weight: 500;
+}
+
+.navbar-secondary-content a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 1em;
+  transition: color 0.3s ease-in-out;
+  display: inline-block;
+}
+
+.navbar-secondary-content a:hover {
+  transform: scale(1.03);
+}
+
+.navbar-secondary-logo-name {
+  font-size: 24px;
+  font-weight: 500;
+  transition: color 0.3 ease;
+}
+
+.navbar-secondary-logo-name a:hover {
+  color: #b3b3b3;
+}
+
+
+.navbar-secondary-apply-mentorship a{
+  border-radius: 100px;
+  padding: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-secondary-apply-mentorship a:hover {
+  background-color: #ffffff;
+  transform: scale(1.03);
+  color: #000000;
+}
+
+.navbar-secondary-items-right-col {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-secondary-items a{
+  transition: color 0.3s ease;
+  border-radius: 100px;
+  padding: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;}
+
+.navbar-secondary-items a:hover {
+  color: #000000;
+  background-color: #ffffff;
+  transform: scale(1.03);}
+
+.navbar-secondary-options {
+  display: flex;
+}
+
+.navbar-secondary-options button {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  padding: 15px 15px;
+  border-radius: 2rem;
+  width: 50px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-secondary-options button:hover {
+  background-color: #7b7b7b;
+}
+
+/* Ana dropdown kapsayıcı */
+.navbar-secondary-profile {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown butonunun tasarımı */
+.navbar-secondary-profile-button {
+  background-color: #007bff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Dropdown menü (gizli) */
+.navbar-secondary-dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0; /* Menü ekranın sağ kenarına hizalanır */
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 200px; /* Menü genişliğini belirler */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Dropdown menü görünür olduğunda */
+.navbar-secondary-profile .navbar-secondary-dropdown-menu {
+  display: block;
+}
+
+/* Menü elemanları */
+.navbar-secondary-dropdown-menu li {
+  padding: 10px 0px;
+}
+
+.navbar-secondary-dropdown-menu li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Menü bağlantı tasarımı */
+.navbar-secondary-dropdown-menu a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  text-align: left; /* Metni sola hizalar */
+  white-space: nowrap; /* Tek satırda tutar, taşarsa kaydırmaz */
+  gap: 10px;
+  padding: 5px;
+}
+
+.navbar-secondary-dropdown-menu {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.navbar-secondary-profile .navbar-secondary-dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+}

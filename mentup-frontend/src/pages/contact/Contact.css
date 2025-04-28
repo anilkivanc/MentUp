@@ -1,0 +1,130 @@
+.contact-container {
+  background: linear-gradient(135deg, #101828 30%, #6a33ff 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.contact-div {
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-title {
+  color: #fff;
+  font-weight: 500;
+  font-size: 36px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  background-color: #fff;
+  border-radius: 15px;
+  width: 60%;
+  margin: 40px auto;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.contact-form h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #101828;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact-form h3 {
+  font-size: 18.5px;
+  color: #101828;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.contact-form-section {
+  margin-bottom: 30px;
+}
+
+.contact-form-section h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #101828;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.contact-form-infos a {
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  color: #6a33ff;
+  text-decoration: none;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+}
+
+.contact-form-infos a:hover {
+  color: #101828;
+  text-decoration: underline;
+}
+
+.contact-form-social-media a {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #6a33ff;
+  margin-bottom: 15px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-form-social-media a:hover {
+text-decoration: underline;
+transform: scale(1.02);
+}
+
+.contact-form-social-media a svg {
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+.contact-form-office-hours a {
+  display: block;
+  font-size: 16px;
+  color: #a1a1a1;
+  margin: 10px 0;
+}
+
+.contact-form-thanks a {
+  font-size: 20px;
+  color: #6a33ff;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.contact-form-thanks a svg {
+  margin-left: 10px;
+  font-size: 24px;
+}
+
+.contact-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.contact-container::-webkit-scrollbar-thumb {
+  background: #6a33ff;
+  border-radius: 4px;
+}
+
+.contact-container::-webkit-scrollbar-track {
+  background: #101828;
+}

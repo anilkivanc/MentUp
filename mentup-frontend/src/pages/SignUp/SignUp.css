@@ -1,0 +1,127 @@
+.signup-container {
+  display: flex;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom right, #add8e6, #f9d39e);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+   
+.logo-name a{
+  display: block;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 28px;
+  text-decoration: none;
+  color: #000;
+}
+
+.signup-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.signup-box h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.signup-box label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.signup-box input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.password-wrapper-signup-page {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.password-wrapper input {
+  flex: 1;
+}
+
+.toggle-password {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  margin-left: 10px; 
+}
+
+.toggle-password:focus {
+  outline: none;
+}
+
+.form-group-checkbox {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.form-group-checkbox a {
+  color: #000000;
+  font-size: 15px;
+}
+
+.form-group-checkbox input{
+  margin-right: 10px;
+  width: 13px;
+}
+    
+.register-button-signup-page {
+  background: black;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  width: 400px;
+  height: 55px;
+  margin-top: 25px;
+}
+
+.login-button-signup-page {
+  display: inline-block;
+  background: none;
+  border: 1px solid black;
+  color: black;
+  padding: 0.8rem 2rem;
+  border-radius: 3px;
+  cursor: pointer;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+}
+
+.register-button-signup-page:hover {
+  background-color: #3a3a3a;
+}
+
+.login-button-signup-page:hover {
+  background-color: #fff;
+}

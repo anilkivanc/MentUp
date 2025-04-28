@@ -1,0 +1,81 @@
+.about-us-container {
+  background: linear-gradient(168.18deg, #101828 22.59%, #6938ef 85.64%), linear-gradient(137.87deg, #101828 37.36%, #8619f5 80.62%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.about-us-div h1 {
+  color: #ffffff;
+  font-weight: 500;
+  margin-left: 80px;
+  margin-top: 30px;
+}
+
+.about-us-form {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  width: 80%;
+  margin: 25px auto;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-us-form h2 {
+  margin: 15px 30px;
+  font-size: 25px;
+  font-weight: 700;
+  color: #101828;
+  display: flex;
+  align-items: center;
+}
+
+.about-us-form ul {
+  list-style: none;
+  padding: 0;
+  font-size: 18px;
+  margin: 0 30px 20px 30px;
+}
+
+.about-us-form ul li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  line-height: 1.6;
+}
+
+.list-icon {
+  color: #6938ef;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.about-us-section {
+  margin-bottom: 30px;
+}
+
+.about-us-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.about-us-container::-webkit-scrollbar-thumb {
+  background: #6938ef;
+  border-radius: 4px;
+}
+
+.about-us-container::-webkit-scrollbar-track {
+  background: #101828;
+}
+
+.about-us-form-team-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #101828;
+  margin-bottom: 15px;
+}
+
+.about-us-form-team-title svg {
+  margin-right: 10px;
+}

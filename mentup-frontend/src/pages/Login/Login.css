@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #b2f0e6, #fef3c7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .logo-name a{
+    display: block;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 28px;
+    text-decoration: none;
+    color: #000;
+  }
+
+  .register-button-login-page-div {
+    display: flex;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    gap: 20px;
+  }
+
+  .register-button-login-page,
+  .mentor-button-login-page {
+    display: inline-block;
+    background: none;
+    border: 1px solid black;
+    color: black;
+    padding: 0.8rem 2rem;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .login-box {
+    display: inline-block;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .login-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .input-group {
+    margin: 10px 0;
+    text-align: left;
+  }
+  
+  .input-group label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    color: #555;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .password-wrapper-login-page {
+    display: flex;
+    align-items: center;
+  }
+  
+  .password-wrapper input {
+    flex: 1;
+  }
+
+  .toggle-password {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    margin-left: 10px;
+  }
+  
+  .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 14px;
+  }
+  
+  .remember-me {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  .remember-me input {
+    display: flex;
+    margin-right: 12px;
+  }
+  
+  .forgot-password {
+    text-decoration: none;
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  .login-button-login-page {
+    all: unset;
+    display: inline-block;
+    margin: 8px 0;
+    border: none;
+    background: #000;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    height: 55px;
+    text-align: center;
+  }
+  
+  .register-button-login-page:hover {
+    background-color: #fff;
+  }
+
+  .mentor-button-login-page:hover {
+    background-color: #fff;
+  }
+
+  .login-button-login-page:hover {
+    background-color: #3a3a3a;
+  }

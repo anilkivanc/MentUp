@@ -1,0 +1,84 @@
+.mentor-login-container {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #b2cff0, #c7fecb);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .logo-name a {
+    display: block;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 28px;
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .mentor-login-box {
+    display: inline-block;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .mentor-login-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .form-group-mentor-login {
+    margin: 10px 0;
+    text-align: left;
+  }
+  
+  .form-group-mentor-login label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    color: #555;
+  }
+  
+  .form-group-mentor-login input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .password-wrapper-mentor-page {
+    display: flex;
+    align-items: center;
+  }
+  
+  .password-wrapper input {
+    flex: 1;
+  }
+  
+  .login-button-mentor-page {
+    all: unset;
+    display: inline-block;
+    margin: 8px 0;
+    border: none;
+    background: #000;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    height: 55px;
+    text-align: center;
+  }
+  
+  .login-button-mentor-page:hover {
+    background-color: #3a3a3a;
+  
+  }

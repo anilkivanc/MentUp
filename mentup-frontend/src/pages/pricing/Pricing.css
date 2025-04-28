@@ -1,0 +1,113 @@
+.membership-container-all {
+  background: linear-gradient(168.18deg, #101828 22.59%, #6938ef 85.64%), linear-gradient(137.87deg, #101828 37.36%, #8619f5 80.62%);
+  width: 100vw;
+  height: 100vh;
+}
+
+.membership-container {
+    text-align: center;
+    padding: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .membership-container h1 {
+    font-size: 56px;
+    margin-top: 0px;
+    color: #ffffff;
+  }
+  
+  .membership-cards {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin: 25px;
+  }
+  
+  .membership-card-free {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 1.5rem;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+
+  .membership-card-premium {
+    background-color: #1d2939;
+    color: #ffffff;
+    border: 1px solid #1d2939;
+    border-radius: 20px;
+    padding: 1.5rem;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
+  .membership-cards p{
+    font-size: 30px;
+    align-items: center;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .membership-cards h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .membership-cards h3 {
+    text-align: left;
+    font-weight: 500;
+    margin-top: 20px;
+  }
+
+  .membership-cards span {
+    font-size: 24px;
+
+  }
+
+  .membership-cards ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  
+  .membership-cards ul li {
+    margin: 0.5rem 0;
+  }
+  
+  .membership-cards button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+  }
+
+  .membership-button-free {
+    background-color: #1d2939;
+    color: #ffffff;
+    margin-top: 42px;
+  }
+
+  .membership-button-premium {
+    background-color: #ffffff;
+    color: #000000; 
+  }
+
+  .membership-button-free:hover {
+    background-color: #3b4451;
+    transform: scale(1.02);
+  }
+
+  .membership-button-premium:hover {
+    background-color: #ddd;
+    transform: scale(1.02);
+  }
