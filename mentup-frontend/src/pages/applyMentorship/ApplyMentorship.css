@@ -107,7 +107,8 @@
 .apply-mentorship-exp,
 .apply-mentorship-why,
 .apply-mentorship-certificate,
-.apply-mentorship-button-submit-div {
+.apply-mentorship-button-submit-div,
+.apply-mentorship-diploma {
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -118,7 +119,8 @@
 .apply-mentorship-age-label,
 .apply-mentorship-email-label,
 .apply-mentorship-exp-label,
-.apply-mentorship-why-label {
+.apply-mentorship-why-label,
+.apply-mentorship-diploma-label {
   text-align: left;
 }
 

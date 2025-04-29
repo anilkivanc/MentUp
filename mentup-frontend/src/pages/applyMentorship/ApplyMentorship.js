@@ -1,9 +1,6 @@
 import React, { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import './ApplyMentorship.css'
 import NavBar from "../../components/NavBar/NavBar";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const ApplyMentorship = () => {
   const fileInputRef = useRef(null);
@@ -38,7 +35,7 @@ const ApplyMentorship = () => {
         <div className="apply-mentorship-div">
           <h1 className="apply-mentorship-div-title">Mentorluk İçin Başvur</h1>
           <div className="apply-mentorship-form">
-            <h2 className="apply-mentorship-form-title"></h2>
+            {/* <h2 className="apply-mentorship-form-title"></h2> */}
             <div className="apply-mentorship-infos">
               <div className="apply-mentorship-name">
                 <label className="apply-mentorship-name-label">İsim</label>
@@ -56,6 +53,10 @@ const ApplyMentorship = () => {
                 <label className="apply-mentorship-email-label">E-posta</label>
                 <input type="text" className="apply-mentorship-email-input"></input>
               </div>
+              <div className="apply-mentorship-diploma">
+                <label className="apply-mentorship-diploma-label">Diplopma Numarası</label>
+                <input type="text" className="apply-mentorship-diploma-input"></input>
+              </div>
               <div className="apply-mentorship-exp">
                 <label className="apply-mentorship-exp-label">Bilgisayar mühendisliği sektöründe kaç yıllık tecrübeniz var?</label>
                 <input type="text" className="apply-mentorship-exp-input"></input>
@@ -65,7 +66,7 @@ const ApplyMentorship = () => {
                 <input type="text" className="apply-mentorship-why-input"></input>
               </div>
               <div className="apply-mentorship-certificate">
-                <label className="apply-mentorship-certificate-label">Bilgisayar mühendisliği alanında herhangi bir sertifikanız varsa yükleyin.</label>
+                <label className="apply-mentorship-certificate-label">Lütfen Özgeçmişinizi(CV) yükleyiniz.</label>
                 <button 
                   className="apply-mentorship-button-certificate" 
                   onClick={handleCertificateClick}

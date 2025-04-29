@@ -1,0 +1,147 @@
+.chat-widget-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 50;
+}
+
+.chat-widget {
+  background-color: #212121;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 320px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-widget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #047857;
+  color: white;
+  padding: 12px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.chat-widget-mentor-info {
+  display: flex;
+  align-items: center;
+}
+
+.chat-widget-mentor-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.chat-widget-mentor-name {
+  font-weight: bold;
+  margin: 0;
+}
+
+.chat-widget-mentor-job {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin: 0;
+}
+
+.chat-widget-close-button {
+  height: 30px;
+  width: 30px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.chat-widget-close-button:hover {
+  background-color: #35856f;
+}
+
+.chat-widget-body {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  text-align: left;
+}
+
+.chat-widget-message {
+  margin-bottom: 10px;
+}
+
+.chat-widget-user-message {
+  text-align: right;
+}
+
+.chat-widget-mentor-message {
+  text-align: left;
+}
+
+.chat-widget-message-bubble {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 15px;
+  max-width: 80%;
+}
+
+.chat-widget-user-bg {
+  background-color: #d1fae5;
+}
+
+.chat-widget-mentor-bg {
+  background-color: #e5e7eb;
+}
+
+.chat-widget-input-container {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-top: 1px solid #ddd;
+  gap: 10px;
+}
+
+.chat-widget-input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  outline: none;
+  background-color: #3c3c3c;
+  color: #fff;
+}
+
+.chat-widget-send-button {
+  background-color: #1e532a;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  border: none;
+}
+
+.chat-widget-send-button:hover {
+  background-color: #065f46;
+}
+
+.chat-widget-open-button {
+  background-color: #047857;
+  color: white;
+  padding: 12px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.chat-widget-open-button:hover {
+  background-color: #065f46;
+}

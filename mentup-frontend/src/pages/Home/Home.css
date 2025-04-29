@@ -1,152 +1,153 @@
 .home-container {
-  background: linear-gradient(168.18deg, #101828 22.59%, #6938ef 85.64%), linear-gradient(137.87deg, #101828 37.36%, #8619f5 80.62%);
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
-  margin: 0;
-  width: 100vw;
-  height: 100vh;
+    background: linear-gradient(168.18deg, #101828 22.59%, #6938ef 85.64%), linear-gradient(137.87deg, #101828 37.36%, #8619f5 80.62%);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
 }
 
 .top-page-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 40px;
-  background: #ffffff;
-  text-align: center;
-  box-shadow: 0 1px 2px #00000014, inset 0 -1px #ced7e0;
-}
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: #ffffff;
+    text-align: center;
+    box-shadow: 0 1px 2px #00000014, inset 0 -1px #ced7e0;
+  }
 
-.top-page-content a {
-  color: #000;
-  text-decoration: none;
-  margin: 0 1em;
-  transition: color 0.3s ease-in-out;
-  display: inline-block;
-}
+  .top-page-content a {
+    color: #000;
+    text-decoration: none;
+    margin: 0 1em;
+    transition: color 0.3s ease-in-out;
+    display: inline-block;
+  }
 
-.logo-name {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.auth-buttons button {
-  margin-left: 10px;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.auth-buttons .login {
-  background-color: #ccc;
-  color: #000;
-  border: 1px solid #fff;
-}
-
-.auth-buttons .register {
-  background: #000;
-  color: #fff;
-}
-
-main .hero {
-  text-align: left;
-  padding: 30px 20px;
-  color:  #ffffff;
-}
+  .logo-name {
+    font-size: 24px;
+    font-weight: bold;
+  }
   
-main .hero h1 {
-  font-size: 35px;
-  margin-bottom: 20px;
-  display: inline-block;
-  margin-top: 0px;
-}
+  .auth-buttons button {
+    margin-left: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
   
-main .hero p {
-  font-size: 24px;
-  margin-bottom: 30px;
-}
-
-main .hero ul {
-  display: inline-block;
-  list-style: none;
-  padding: 0;
-  font-size: 20px;
-  text-align: left;
-}
+  .auth-buttons .login {
+    background-color: #ccc;
+    color: #000;
+    border: 1px solid #fff;
+  }
   
-main .hero ul li {
-  margin-bottom: 10px;
-}
+  .auth-buttons .register {
+    background: #000;
+    color: #fff;
+  }
+
+  main .hero {
+    text-align: left;
+    padding: 30px 20px;
+    color:  #ffffff;
+  }
+    
+  main .hero h1 {
+    font-size: 35px;
+    margin-bottom: 20px;
+    display: inline-block;
+    margin-top: 0px;
+  }
+    
+  main .hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
   
-main .hero .stats {
-  margin-top: 30px;
-  color: #ffffff;
-}
+  main .hero ul {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    font-size: 20px;
+    text-align: left;
+  }
+    
+  main .hero ul li {
+    margin-bottom: 10px;
+  }
+    
+  main .hero .stats {
+    margin-top: 30px;
+    color: #ffffff;
+  }
+    
+  main .hero .stats p {
+    margin: 8px 0;
+    font-size: 18px;
+  }
+
+  .homepage-search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .homepage-search-input-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 5px 10px;
+    width: 300px;
+    height: 28px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .homepage-search-input-wrapper input {
+    border: none;
+    outline: none;
+    background: transparent;
+    flex: 1;
+    font-size: 14px;
+    padding-left: 10px;
+    color: #333;
+  }
+
+  .search-input-wrapper input::placeholder {
+    color: #aaa;
+  }
+
+  .homepage-search-icon {
+    background-color: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .homepage-search-icon svg {
+    flex-shrink: 0;
+    transition: color 0.3 ease;
+  }
+
+  .homepage-search-icon:hover svg{
+    color: #555;
+  }
   
-main .hero .stats p {
-  margin: 8px 0;
-  font-size: 18px;
-}
-
-.homepage-search-bar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.homepage-search-input-wrapper {
-  display: flex;
-  align-items: center;
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  padding: 5px 10px;
-  width: 300px;
-  height: 28px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.homepage-search-input-wrapper input {
-  border: none;
-  outline: none;
-  background: transparent;
-  flex: 1;
-  font-size: 14px;
-  padding-left: 10px;
-  color: #333;
-}
-
-.search-input-wrapper input::placeholder {
-  color: #aaa;
-}
-
-.homepage-search-icon {
-  background-color: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-}
-
-.homepage-search-icon svg {
-  flex-shrink: 0;
-  transition: color 0.3 ease;
-}
-
-.homepage-search-icon:hover svg{
-  color: #ffffff;
-}
-
-.search-bar button:hover {
-  background-color: #0030cf;
-}
-
-.auth-buttons .login:hover {
-  background-color: #9a9a9a;
-}
-
-.auth-buttons .register:hover {
-  background-color: #3a3a3a;
-}
+  .search-bar button:hover {
+    background-color: #0030cf;
+  }
+  
+  .auth-buttons .login:hover {
+    background-color: #9a9a9a;
+  }
+  
+  .auth-buttons .register:hover {
+    background-color: #3a3a3a;
+  }

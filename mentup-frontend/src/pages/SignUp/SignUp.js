@@ -8,6 +8,7 @@ const Signup = () => {
   const [name, setName] = useState("");
   const [surname, setSurName] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordAgain, setPasswordAgain] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
@@ -18,35 +19,64 @@ const Signup = () => {
   };
 
   async function handleSignUp(e) {
-    e.preventDefault(); // Sayfanın yeniden yüklenmesini engeller
-
-    setMessage(""); // Önceki mesajı temizle
-
-    const response = await fetch("http://localhost:5001/auth/signup", {
+    e.preventDefault();
+    setMessage("");
+  
+    if (!name || !surname || !email || !password || !passwordAgain) {
+      setMessage("Tüm alanları doldurmalısınız.");
+      return;
+    }
+  
+    if (password.trim().length < 6 || passwordAgain.trim().length < 6) {
+      setMessage("Şifre en az 6 karakter olmalıdır.");
+      return;
+    }
+  
+    if (password !== passwordAgain) {
+      setMessage("Şifreler eşleşmiyor.");
+      return;
+    }
+  
+    try {
+      const response = await fetch("http://localhost:5001/auth/signup", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            name: name,
-            surname: surname,
-            email: email,
-            password: password
+          name,
+          surname,
+          email,
+          password,
         })
-    });
-    if (!response.ok) {
-        console.log("Fetch atarken hata geldi!");
+      });
+  
+      const data = await response.json();
+  
+      if (!response.ok) {
+        const errorMessage = data.message || "Kayıt sırasında hata oluştu.";
+        setMessage(errorMessage);
+        return;
+      }
+  
+      setMessage(data.message || "Kayıt Başarılı!");
+    } catch (error) {
+      setMessage("Sunucuya bağlanılamadı.");
+      console.error(error);
     }
-    // Kayıt olduktan sonra yapılacak işlemler buraya eklenir
-
-    const data = await response.json();
-    setMessage(data.message || "Kayıt Başarılı!");
   }
+  
+  
 
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [isPasswordAgainVisible, setIsPasswordAgainVisible] = useState(false);
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
+  };
+
+  const togglePasswordAgainVisibility = () => {
+    setIsPasswordAgainVisible(!isPasswordAgainVisible);
   };
 
   return (
@@ -68,7 +98,9 @@ const Signup = () => {
               id="name" 
               value={name} onChange={(e) => setName(e.target.value)} 
               placeholder="John"
-              required />
+              required
+              minLength={6}
+              />
             </div>
             <div className="form-group">
               <label htmlFor="surname">Soyad</label>
@@ -103,6 +135,25 @@ const Signup = () => {
                   type="button"
                   className="toggle-password"
                   onClick={togglePasswordVisibility}
+                >
+                  <FontAwesomeIcon icon={faEye} style={{fontSize: '18px' }}/>
+                </button>
+              </div>
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Şifre (Yeniden)</label>
+              <div className="password-wrapper-signup-page">
+                <input
+                  type={isPasswordAgainVisible ? "text" : "password"}
+                  id="passwordAgain"
+                  value={passwordAgain} onChange={(e) => setPasswordAgain(e.target.value)}
+                  placeholder="********"
+                  required
+                />
+                <button
+                  type="button"
+                  className="toggle-password"
+                  onClick={togglePasswordAgainVisibility}
                 >
                   <FontAwesomeIcon icon={faEye} style={{fontSize: '18px' }}/>
                 </button>

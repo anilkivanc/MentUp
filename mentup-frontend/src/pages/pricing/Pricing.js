@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import NavBar from "../../components/NavBar/NavBar";
 import { faComments } from "@fortawesome/free-solid-svg-icons";
 import { faVideo } from "@fortawesome/free-solid-svg-icons";
-import { faMoneyCheckDollar } from "@fortawesome/free-solid-svg-icons/faMoneyCheckDollar";
+// import { faMoneyCheckDollar } from "@fortawesome/free-solid-svg-icons/faMoneyCheckDollar";
 import { faMicrophone } from "@fortawesome/free-solid-svg-icons";
 
 const Pricing = () => {
@@ -28,7 +28,7 @@ const Pricing = () => {
           <button className= "membership-button-free">Başlayın</button>
         </div>
 
-        <div className="membership-card-premium">
+        {/* <div className="membership-card-premium">
           <h2>Premium</h2>
           <p className="membership-premium-p">$30<span>/ay</span></p>
           <h3>Sınırsız ve ücretsiz görüşme imkanı!</h3>
@@ -39,7 +39,7 @@ const Pricing = () => {
             <li><FontAwesomeIcon icon={faMoneyCheckDollar} style={{color: 'white', fontSize: '16px', marginRight: '6px' }} />Ücretli görüşmelere ücretsiz katılım</li>
           </ul>
           <button className= "membership-button-premium">Başlayın</button>
-        </div>
+        </div> */}
       </div>
     </div>
   </div>

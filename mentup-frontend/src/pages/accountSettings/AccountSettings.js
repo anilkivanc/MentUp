@@ -1,13 +1,10 @@
 import { useState } from "react";
 import './AccountSettings.css'
-import { useNavigate } from "react-router-dom";
 import NavBar2 from "../../components/NavBar2/Navbar2";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
-import { faCreditCard } from "@fortawesome/free-solid-svg-icons";
-import { faReceipt } from "@fortawesome/free-solid-svg-icons";
 
 const AccountSettings = () => {
   const [profilePhoto, setProfilePhoto] = useState(null);
@@ -87,12 +84,6 @@ const AccountSettings = () => {
                 <a className="profile-settings-bar-account-settings-option" href="/accountsettings">
                   <FontAwesomeIcon icon={faGear} style={{ marginRight: '14px', color: 'black', fontSize: '20px'}}/>
                   Hesap Bilgileri</a>
-                <a className="profile-settings-bar-subscription-option" href="#">
-                  <FontAwesomeIcon icon={faCreditCard} style={{ marginRight: '14px', color: 'black', fontSize: '18px'}}/>
-                  Abonelik</a>
-                <a className="profile-settings-bar-payment-history-option" href="#">
-                  <FontAwesomeIcon icon={faReceipt} style={{ marginRight: '19px', color: 'black', fontSize: '20px'}}/>
-                  Ödeme Geçmişi</a>
               </div>
             </div>
           </div>

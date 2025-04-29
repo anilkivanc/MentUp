@@ -3,7 +3,7 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
     margin: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
   }
   
   .mentor-review-form-div {
@@ -99,3 +99,82 @@
   .mentor-review-button-submit:hover {
     background-color: rgb(77, 144, 253);
   }
+  .mentor-review-radio-group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+  }
+  
+  .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .mentor-review-q7-textarea {
+    width: 80%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #f9feff;
+    resize: vertical;
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .radio-option input[type="radio"] {
+    accent-color: #7c3aed; /* Mor renkli işaretli buton */
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+  .mentor-review-info-text {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+  }
+  .admin-panel-action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-top: 30px;
+  }
+  
+  .admin-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .admin-button.approve {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .admin-button.approve:hover {
+    background-color: #43a047;
+  }
+  
+  .admin-button.reject {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .admin-button.reject:hover {
+    background-color: #e53935;
+  }
+  
+  
+  

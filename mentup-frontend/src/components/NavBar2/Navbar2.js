@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './Navbar2.css';
-//import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMessage } from "@fortawesome/free-solid-svg-icons";
 import { faBell } from "@fortawesome/free-solid-svg-icons";
@@ -44,8 +43,9 @@ const NavBar2 = () => {
             <a href="/browsementors">Mentorlara Göz At</a>
             <a href="/aboutus">Hakkımızda</a>
             <a href="/contact">İletişim</a>
-            <a href="#">Mentorlerimiz</a>
+            <a href="/mentors">Mentorlarımız</a>
             <a href="/pricing">Fiyatlar</a>
+            <a href="/appointments">Görüşmelerim</a>
           </div>
           <div className="navbar-secondary-options">
             <button className="navbar-secondary-messages-button">
@@ -71,7 +71,7 @@ const NavBar2 = () => {
                   <li>
                     <a className='navbar-secondary-dropdown-menu-settings' href="/menteeProfile">
                       <FontAwesomeIcon icon={faGear} style={{color:"black", marginRight:"10px"}} />
-                      Hesap Ayarları</a></li>
+                      Ayarlar</a></li>
                   <li><a className='navbar-secondary-dropdown-menu-logout' href="/login">
                   <FontAwesomeIcon icon={faArrowRightFromBracket} style={{color:"black", marginRight:"10px"}}/>
                   Çıkış Yap</a></li>

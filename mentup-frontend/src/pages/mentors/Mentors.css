@@ -1,0 +1,108 @@
+.mentors-container {
+  background: linear-gradient(168.18deg, #101828 22.59%, #6938ef 85.64%), linear-gradient(137.87deg, #101828 37.36%, #8619f5 80.62%);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.menors-section {
+  display: flex;
+  flex-direction: row;
+}
+
+.mentors-section-title {
+  color: #fff;
+  padding: 40px;
+  font-weight: 500;
+}
+
+.mentor-cards {
+  display: flex;
+  flex-direction: row;
+}
+
+.mentor-card1 {
+  background-color: #fff;
+  padding: 40px;
+  margin-left: 40px;
+  border-radius: 12px;
+  width: 15%;
+  height: 370px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mentor-card1-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-image: url('../../images/mentor.png');
+  background-size: cover;
+  background-position: center; 
+  margin-right: 20px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.mentor-name1 {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.mentor-job1 {
+  margin-top: 6px;
+  font-weight: 400;
+}
+
+.mentor-info1 {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #626262;
+  text-align: justify;
+}
+
+.mentor-card2 {
+  background-color: #fff;
+  padding: 40px;
+  margin-left: 40px;
+  border-radius: 12px;
+  width: 15%;
+  height: 370px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mentor-card2-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-image: url('../../images/mentor2.png');
+  background-size: cover;
+  background-position: center; 
+  margin-right: 20px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.mentor-name2 {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.mentor-job2 {
+  margin-top: 6px;
+  font-weight: 400;
+}
+
+.mentor-info2 {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #626262;
+  text-align: justify;
+}

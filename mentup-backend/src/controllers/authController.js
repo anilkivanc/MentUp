@@ -43,39 +43,64 @@ exports.login = async (req, res) => {
 
 // Signup işlemi
 exports.signup = async (req, res) => {
-    const { name, surname, email, password } = req.body;
-
+    const { 
+        name, 
+        surname, 
+        email, 
+        password, 
+        passwordAgain } = req.body;
+  
     try {
-        console.log('Gelen Body:', req.body);
-
-        // E-postanın daha önce kayıtlı olup olmadığını kontrol eder
-        const existingUser = await User.findOne({ where: { email } });
-        if (existingUser) {
-            return res.status(400).json({
-                error: 'Validation hatası',
-                message: 'Bu e-posta adresi zaten kayıtlı!',
-            });
+      console.log('Gelen Body:', req.body);
+  
+      // Tüm alanlar dolu mu kontrolü
+      if (!name || !surname || !email || !password ) {
+        return res.status(400).json({ message: 'Tüm alanları doldurun!' });
+      }
+  
+      // E-posta zaten kayıtlı mı?
+      const existingUser = await User.findOne({ where: { email } });
+      if (existingUser) {
+        return res.status(400).json({
+          message: 'Bu e-posta adresi zaten kayıtlı!',
+        });
+      }
+  
+      // Şifreyi hashle
+      const hashedPassword = await bcrypt.hash(password, 10);
+  
+      // Yeni kullanıcı oluştur
+      const newUser = await User.create({
+        name,
+        surname,
+        email,
+        password: hashedPassword,
+        role: 'mentee'
+      });
+  
+      res.status(201).json({
+        message: 'Kayıt başarılı!',
+        user: {
+          id: newUser.id,
+          name: newUser.name,
+          surname: newUser.surname,
+          email: newUser.email
         }
-
-        // Şifreyi hashler
-        const hashedPassword = await bcrypt.hash(password, 10); // 10, saltRounds değeridir
-
-        // Kullanıcıyı oluştur
-        const newUser = await User.create({ name, surname, email, password: hashedPassword, role: 'mentee'});
-        res.status(201).json({ message: 'Kayıt başarılı!', user: newUser });
+      });
     } catch (error) {
-        console.error('🔴 FULL SIGNUP ERROR ▶', {
-          message: error.message,
-          parent: error.parent && error.parent.message,
-          stack: error.stack
-        });
-        return res.status(500).json({
-          message: 'Bir hata oluştu',
-          error: error.message,
-          detail: error.parent && error.parent.message
-        });
+      console.error('🔴 FULL SIGNUP ERROR ▶', {
+        message: error.message,
+        parent: error.parent && error.parent.message,
+        stack: error.stack
+      });
+      return res.status(500).json({
+        message: 'Bir hata oluştu',
+        error: error.message,
+        detail: error.parent && error.parent.message
+      });
     }
-};
+  };
+  
 
 // Profil Yönetimi (GET ve PUT için tek endpoint)
 exports.profileManagement = async (req, res) => {

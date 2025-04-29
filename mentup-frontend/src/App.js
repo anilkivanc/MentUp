@@ -13,6 +13,10 @@ import Contact from './pages/contact/Contact';
 import MentorReview from './pages/mentorReview/MentorReview';
 import MentorLogin from './pages/MentorLogin/MentorLogin';
 import BrowseMentors from './pages/browseMentors/BrowseMentors';
+import Appointments from './pages/appointments/Appointments';
+import Mentors from './pages/mentors/Mentors';
+import VideoChat from './pages/videochat/VideoChat';
+import AdminPanel from './admin/pages/adminPanel/adminPanel';
 
 function App() {
   return (
@@ -34,6 +38,14 @@ function App() {
           <Route path='/mentorreview' element={<MentorReview />}/>
           <Route path='/mentorlogin' element={<MentorLogin />}/>
           <Route path='/browsementors' element={<BrowseMentors />} />
+          <Route path='/appointments' element={<Appointments />} />
+          <Route path='/mentors' element={<Mentors />} />
+          <Route path='/browsementors' element={<BrowseMentors />} />,
+          <Route path='/videochat' element={<VideoChat />} />
+          <Route path='/adminpanel' element={<AdminPanel />} />
+
+
+
         </Routes>
       </Router>
     </div>
