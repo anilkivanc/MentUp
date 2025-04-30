@@ -35,28 +35,32 @@ const ApplyMentorship = () => {
         <div className="apply-mentorship-div">
           <h1 className="apply-mentorship-div-title">Mentorluk İçin Başvur</h1>
           <div className="apply-mentorship-form">
-            {/* <h2 className="apply-mentorship-form-title"></h2> */}
             <div className="apply-mentorship-infos">
-              <div className="apply-mentorship-name">
-                <label className="apply-mentorship-name-label">İsim</label>
-                <input type="text" className="apply-mentorship-name-input"></input>
+              <div className="apply-mentorship-name-surname-div">
+                <div className="apply-mentorship-name">
+                  <label className="apply-mentorship-name-label">İsim</label>
+                  <input type="text" className="apply-mentorship-name-input"></input>
+                </div>
+                <div className="apply-mentorship-surname">
+                  <label className="apply-mentorship-surname-label">Soyisim</label>
+                  <input type="text" className="apply-mentorship-surname-input"></input>
+                </div>
               </div>
-              <div className="apply-mentorship-surname">
-                <label className="apply-mentorship-surname-label">Soyisim</label>
-                <input type="text" className="apply-mentorship-surname-input"></input>
-              </div>
-              <div className="apply-mentorship-age">
-                <label className="apply-mentorship-age-label">Yaş</label>
-                <input type="text" className="apply-mentorship-age-input"></input>
+              <div className="apply-mentorship-age-diploma-div">
+                <div className="apply-mentorship-age">
+                  <label className="apply-mentorship-age-label">Yaş</label>
+                  <input type="text" className="apply-mentorship-age-input"></input>
+                </div>
+                <div className="apply-mentorship-diploma">
+                  <label className="apply-mentorship-diploma-label">Diploma Numarası</label>
+                  <input type="text" className="apply-mentorship-diploma-input"></input>
+                </div>
               </div>
               <div className="apply-mentorship-email">
                 <label className="apply-mentorship-email-label">E-posta</label>
                 <input type="text" className="apply-mentorship-email-input"></input>
               </div>
-              <div className="apply-mentorship-diploma">
-                <label className="apply-mentorship-diploma-label">Diplopma Numarası</label>
-                <input type="text" className="apply-mentorship-diploma-input"></input>
-              </div>
+
               <div className="apply-mentorship-exp">
                 <label className="apply-mentorship-exp-label">Bilgisayar mühendisliği sektöründe kaç yıllık tecrübeniz var?</label>
                 <input type="text" className="apply-mentorship-exp-input"></input>

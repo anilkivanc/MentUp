@@ -11,14 +11,6 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleSignupClick = () => {
-    navigate('/signup');
-  };
-
-  const handleMentorLoginClick = () => {
-    navigate('/mentorlogin');
-  };
-
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -64,16 +56,13 @@ const Login = () => {
 
   return (
     <div>
-      <div className='register-button-login-page-div'>
-        <button className="mentor-button-login-page" onClick={handleMentorLoginClick}>Mentor Girişi</button>
-        <button className="register-button-login-page" onClick={handleSignupClick}>Kaydol</button>
-      </div>
       <div className="login-container">
-        <div className='logo-name'>
+      <div className='login-logo-name'>
           <a href='/home'>MentUp</a>
         </div>
         <div className="login-box">
-          <h1 className="login-title">MentUp’a Mentee Girişi</h1>
+          <h1 className="login-title">Tekrar Hoşgeldin</h1>
+          <h2>Hesabına giriş yap</h2>
           <form>
             <div className="input-group">
               <label htmlFor="email">E-posta</label>
@@ -102,7 +91,7 @@ const Login = () => {
                   className="toggle-password"
                   onClick={togglePasswordVisibility}
                 >
-                  <FontAwesomeIcon icon={faEye} style={{ fontSize: '18px' }} />
+                  <FontAwesomeIcon icon={faEye} style={{ fontSize: '18px', color: 'grey'}} />
                 </button>
               </div>
             </div>
@@ -110,7 +99,7 @@ const Login = () => {
               <label className="remember-me">
                 <input type="checkbox" /> Beni Hatırla
               </label>
-              <a href="#" className="forgot-password">Şifremi unuttum?</a>
+              <a href="/forgotpassword" className="forgot-password">Şifremi unuttum?</a>
             </div>
             <button
               onClick={handleSubmit}
@@ -118,8 +107,12 @@ const Login = () => {
               className="login-button-login-page"
               disabled={isLoading}
             >
-              {isLoading ? "Yükleniyor..." : "GİRİŞ YAP"}
+              {isLoading ? "Yükleniyor..." : "Giriş Yap"}
             </button>
+            <div className='login-page-signup-div'>
+              <span>Hesabın yok mu? </span>
+              <a href='/signup'> Hemen kaydol</a>
+            </div>
             {message && <p className="message">{message}</p>}
           </form>
         </div>

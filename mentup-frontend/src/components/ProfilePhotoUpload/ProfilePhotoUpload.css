@@ -1,0 +1,64 @@
+.photo-settings-card {
+  display: block;
+  margin-left: 80px;
+  margin-top: 25px;
+}
+
+.profile-photo-card {
+  display: inline-block;
+  border-radius: 10px;
+  border: 1px solid rgb(59, 59, 59);
+  text-align: center;
+  background-color: #1d1d1d;
+}
+
+.profile-photo {
+  margin-top: 35px;
+  margin-bottom: 20px;
+  font-size: 80px;
+  text-align: center;
+}
+
+.profile-photo-preview {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  /* border: 1px solid rgb(153, 153, 153); */
+}
+
+.profile-photo-icon {
+  font-size: 100px;
+  color: gray;
+}
+
+.profile-photo-text-info {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.profile-photo-text h3 {
+  font-size: 18px;
+  color: #fff;
+}
+
+.profile-photo-text p {
+  font-size: 14px;
+  color: #4e4e4e;
+  margin: 20px;
+}
+
+.profile-photo-button-upload {
+  border-radius: 2rem;
+  margin-bottom: 20px;
+  width: 200px;
+  height: 40px;
+  border: 1px solid rgb(59, 59, 59);
+  color: #fff;
+  cursor: pointer;
+  background-color: #1d1d1d;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.profile-photo-button-upload:hover {
+  background-color: #333333;
+}

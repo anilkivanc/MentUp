@@ -14,10 +14,6 @@ const Signup = () => {
 
   const navigate = useNavigate();
 
-  const handleLoginClick = () => {
-      navigate('/login');
-  };
-
   async function handleSignUp(e) {
     e.preventDefault();
     setMessage("");
@@ -81,18 +77,16 @@ const Signup = () => {
 
   return (
     <div>
-      <div className='login-button-signup-page-div'>
-        <button className="login-button-signup-page" onClick={handleLoginClick}>Giriş Yap</button>
-      </div>
       <div className="signup-container">
-        <div className='logo-name'>
+        <div className='signup-logo-name'>
           <a href='/home'>MentUp</a>
         </div>
         <div className="signup-box">
-          <h2>MentUp&#39;a Kaydol</h2>
+          <h1>Hadi başlayalım</h1>
+          <h2>Hesap oluştur</h2>
           <form>
             <div className="form-group">
-            <label htmlFor="name">Ad</label>
+              <label htmlFor="name">Ad</label>
               <input 
               type="text" 
               id="name" 
@@ -136,7 +130,7 @@ const Signup = () => {
                   className="toggle-password"
                   onClick={togglePasswordVisibility}
                 >
-                  <FontAwesomeIcon icon={faEye} style={{fontSize: '18px' }}/>
+                  <FontAwesomeIcon icon={faEye} style={{fontSize: '18px' , color:'grey' }}/>
                 </button>
               </div>
             </div>
@@ -155,7 +149,7 @@ const Signup = () => {
                   className="toggle-password"
                   onClick={togglePasswordAgainVisibility}
                 >
-                  <FontAwesomeIcon icon={faEye} style={{fontSize: '18px' }}/>
+                  <FontAwesomeIcon icon={faEye} style={{fontSize: '18px' , color:'grey' }}/>
                 </button>
               </div>
             </div>
@@ -163,7 +157,11 @@ const Signup = () => {
               <input type="checkbox" id="terms" required />
               <a href="#">Hizmet Şartlarını ve Gizlilik Politikasını kabul ediyorum</a>
             </div>
-            <button type="submit" className="register-button-signup-page" onClick={handleSignUp}>KAYDOL</button>
+            <button type="submit" className="register-button-signup-page" onClick={handleSignUp}>Kaydol</button>
+            <div className='signup-page-signup-div'>
+              <span>Hesabın var mı? </span>
+              <a href='/login'> Hemen giriş yap</a>
+            </div>
             {message && <p className="message">{message}</p>}
           </form>
         </div>

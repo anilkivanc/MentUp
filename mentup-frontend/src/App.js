@@ -17,6 +17,7 @@ import Appointments from './pages/appointments/Appointments';
 import Mentors from './pages/mentors/Mentors';
 import VideoChat from './pages/videochat/VideoChat';
 import AdminPanel from './admin/pages/adminPanel/adminPanel';
+import ForgotPassword from './pages/forgotPassword/ForgotPassword';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
           <Route path='/browsementors' element={<BrowseMentors />} />,
           <Route path='/videochat' element={<VideoChat />} />
           <Route path='/adminpanel' element={<AdminPanel />} />
+          <Route path='/forgotpassword' element={<ForgotPassword />} />
 
 
 

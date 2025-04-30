@@ -5,7 +5,8 @@
 
 .login-container {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom right, #b2f0e6, #fef3c7);
+    /* background: linear-gradient(to bottom right, #b2f0e6, #fef3c7); */
+      background-color: #121212;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,13 +15,13 @@
     height: 100vh;
   }
 
-  .logo-name a{
+  .login-logo-name a{
     display: block;
     margin-bottom: 20px;
     font-weight: bold;
     font-size: 28px;
     text-decoration: none;
-    color: #000;
+    color: #fff;
   }
 
   .register-button-login-page-div {
@@ -44,18 +45,29 @@
 
   .login-box {
     display: inline-block;
-    background: #ffffff;
+    background-color: #171717;
     padding: 2rem;
     border-radius: 10px;
+    border: 1px solid rgb(59, 59, 59);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 400px;
   }
+
+  .login-box h2 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #8e9291;
+    align-self: center;
+    text-align: center;
+  }
   
   .login-title {
     font-size: 22px;
-    margin-bottom: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
     text-align: center;
+    color: #fff;
   }
   
   .input-group {
@@ -65,17 +77,22 @@
   
   .input-group label {
     display: inline-block;
-    margin-bottom: 0.5rem;
-    font-size: 0.8rem;
-    color: #555;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #8e9291;
+    font-weight: 600;
   }
   
   .input-group input {
     width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
+    height: 40px;
+    background-color: #1d1d1d;
+    color: #fff;
+    border-radius: 10px;
+    border: 1px solid rgb(59, 59, 59);
+    font-size: 16px;
+    box-sizing: border-box;
+    padding-left: 14px;
   }
   
   .password-wrapper-login-page {
@@ -99,7 +116,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 0;
+    margin: 15px 0;
     font-size: 14px;
   }
   
@@ -107,6 +124,7 @@
     display: flex;
     align-items: center;
     white-space: nowrap;
+    color: #8e9291;
   }
 
   .remember-me input {
@@ -116,23 +134,22 @@
   
   .forgot-password {
     text-decoration: none;
-    color: #007bff;
+    color: #8e9291;
     cursor: pointer;
+    text-decoration: underline;
   }
   
   .login-button-login-page {
-    all: unset;
-    display: inline-block;
-    margin: 8px 0;
-    border: none;
-    background: #000;
-    color: white;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 1rem;
     width: 100%;
-    height: 55px;
-    text-align: center;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #26815b;
+    background-color: #006239;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 25px;
   }
   
   .register-button-login-page:hover {
@@ -144,5 +161,36 @@
   }
 
   .login-button-login-page:hover {
-    background-color: #3a3a3a;
+    background-color: #217953;
+  }
+
+  .login-page-signup-div {
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .login-page-signup-div span {
+    display: flex;
+    flex-direction: row;
+    color: #8e9291;
+  }
+
+  .login-page-signup-div a{
+    display: flex;
+    flex-direction: row;
+    color: #d7d7d7;
+    cursor: pointer;
+    margin-left: 10px;
+    text-decoration: underline;
+  }
+
+  .message {
+    color: #fff;
+    margin-top: 20px;
+    text-align: center;
   }

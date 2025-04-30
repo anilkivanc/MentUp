@@ -1,6 +1,7 @@
 .mentee-profile-container {
   font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(168.18deg, #101828 22.59%, #6938ef 85.64%), linear-gradient(137.87deg, #101828 37.36%, #8619f5 80.62%);
+  /* background: linear-gradient(168.18deg, #101828 22.59%, #6938ef 85.64%), linear-gradient(137.87deg, #101828 37.36%, #8619f5 80.62%); */
+  background-color: #121212;
   height: 100vh;
   width: 100vw;
   overflow-y: auto;
@@ -22,102 +23,11 @@
   color: #ffffff;
 }
 
-.all-settings-form {
-  display: flex;
-  gap: 50px;
-}
-
-.photo-settings-card {
-  display: block;
-  margin-left: 80px;
-  margin-top: 25px;
-}
-
-.profile-photo-card {
-  display: inline-block;
-  background-color: #ffffff;
-  border-radius: 1rem;
-  text-align: center;
-}
-
-.profile-photo {
-  margin-top: 35px;
-  margin-bottom: 20px;
-  font-size: 80px;
-  text-align: center;
-}
-
-.profile-photo-preview {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.profile-photo-icon {
-  font-size: 100px;
-  color: gray;
-}
-
-.profile-photo-text-info {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.profile-photo-text h3 {
-  font-size: 18px;
-}
-
-.profile-photo-text p {
-  font-size: 14px;
-  color: #4e4e4e;
-  margin: 20px;
-}
-
-.profile-photo-button-upload {
-  border-radius: 2rem;
-  margin-bottom: 20px;
-  width: 200px;
-  height: 40px;
-  border: 1px solid rgb(176, 209, 255);
-  color: rgb(0, 108, 255);
-  cursor: pointer;
-  background-color: #ffffff;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.profile-photo-button-upload:hover {
-  background-color: rgb(231, 241, 255);
-  transform: scale(1.01);
-}
-
-.profile-settings-bar {
-  display: block;
-  background-color: #ffffff;
-  margin-top: 25px;
-  border-radius: 1rem;
-  padding: 15px;
-}
-
-.profile-settings-bar a {
-  display: block;
-  margin: 16px;
-  text-decoration: none;
-  text-align: left;
-  color: #000;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 8px;
-  height: 30px;
-}
-
-.profile-settings-bar a:hover {
-  background-color: #e8e8e8;
-}
-
 .profile-settings-form h2 {
   font-size: 30px;
   margin-left: 30px;
   padding-top: 30px;
+  color: #fff;
 }
 
 .profile-settings-form h6 {
@@ -129,9 +39,12 @@
 
 .profile-settings-form {
   display: inline-block;
-  background-color: #ffffff;
-  border-radius: 1rem;
-  width: 1050px;
+  background-color: #171717;
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid rgb(59, 59, 59);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
   margin-top: 25px;
 }
 
@@ -140,22 +53,25 @@
 }
 
 .profile-settings-infos label {
+  display: inline-block;
+  margin-bottom: 10px;
   font-size: 14px;
-  color: #454545;
-  font-weight: bold;
+  color: #8e9291;
+  font-weight: 600;
 }
 
 .profile-settings-infos input,
 .profile-settings-infos select {
   width: 100%;
   height: 40px;
-  border-radius: 7px;
-  border: 1px solid rgb(153, 153, 153);
-  background-color: #f9feff;
-  margin-top: 5px;
+  background-color: #1d1d1d;
+  color: #fff;
+  border-radius: 10px;
+  border: 1px solid rgb(59, 59, 59);
+  font-size: 16px;
+  box-sizing: border-box;
+  padding-left: 14px;
   margin-bottom: 20px;
-  padding-left: 10px;
-  font-size: 14px;
 }
 
 .profile-settings-name-surname {
@@ -177,35 +93,21 @@
   margin-top: 15px;
 }
 
-/* Özel select'lere class atanmışsa bunlara da destek ver */
-.profile-settings-industries-input,
-.profile-settings-languages-input {
+.profile-settings-button-save {
   width: 100%;
   height: 40px;
-  border-radius: 7px;
-  border: 1px solid rgb(153, 153, 153);
-  background-color: #f9feff;
-  margin-top: 5px;
-  margin-bottom: 20px;
-  padding-left: 10px;
-  font-size: 14px;
-}
-
-.profile-settings-button-save {
-  width: 100px;
-  height: 40px;
-  border-radius: 30px;
-  background-color: rgb(49, 128, 255);
+  border-radius: 8px;
+  border: 1px solid #26815b;
+  background-color: #006239;
   color: #ffffff;
   font-weight: bold;
-  border: none;
   cursor: pointer;
-  float: right;
-  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 25px;
 }
 
 .profile-settings-button-save:hover {
-  background-color: rgb(77, 144, 253);
+  background-color: #217953;
 }
 
 .span-required {

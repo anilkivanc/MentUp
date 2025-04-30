@@ -1,5 +1,6 @@
 .apply-mentorship-container {
-  background: linear-gradient(168.18deg, #101828 22.59%, #6938ef 85.64%), linear-gradient(137.87deg, #101828 37.36%, #8619f5 80.62%);
+  /* background: linear-gradient(168.18deg, #101828 22.59%, #6938ef 85.64%), linear-gradient(137.87deg, #101828 37.36%, #8619f5 80.62%); */
+  background-color: #121212;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
   height: 100vh;
   width: 100vw;
@@ -12,45 +13,23 @@
   text-align: center;
 }
 
-.apply-mentorship-div h1 {
+.apply-mentorship-div-title {
   margin-top: 20px;
   margin-bottom: 10px;
   font-size: 30px;
+  font-weight: 500;
   display: block;
-  margin-left: 25px;
   color: #ffffff;
 }
 
 .apply-mentorship-form {
   display: inline-block;
-  background-color: #ffffff;
-  border-radius: 1rem;
-  width: 1050px;
+  /* background-color: #ffffff; */
+  background-color: #171717;
+  width: 450px;
   margin-top: 25px;
-  margin-left: 25px;
-}
-
-.apply-mentorship-form h2 {
-  margin-left: 80px;
-  margin-top: 50px;
-  display: block;
-}
-
-
-.apply-mentorship-form h2 {
-  font-size: 30px;
-  margin-left: 30px;
-  margin-top: 30px;
-}
-
-.apply-mentorship-infos {
-  margin: 25px;
-}
-
-.apply-mentorship-form label {
-  font-size: 14px;
-  color: #454545;
-  font-weight: bold;
+  border-radius: 10px;
+  border: 1px solid rgb(59, 59, 59);
 }
 
 .apply-mentorship-div {
@@ -59,35 +38,19 @@
   text-align: center;
 }
 
-.apply-mentorship-div h1 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-size: 30px;
-  display: block;
-  margin-left: 25px;
-  color: #ffffff;
+.apply-mentorship-name-surname-div,
+.apply-mentorship-age-diploma-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.apply-mentorship-form {
-  display: inline-block;
-  background-color: #ffffff;
-  border-radius: 1rem;
-  width: 1050px;
-  margin-top: 25px;
-  margin-left: 25px;
-}
-
-.apply-mentorship-form h2 {
-  margin-left: 80px;
-  margin-top: 50px;
-  display: block;
-}
-
-
-.apply-mentorship-form h2 {
-  font-size: 30px;
-  margin-left: 30px;
-  margin-top: 30px;
+.apply-mentorship-name-input,
+.apply-mentorship-surname-input,
+.apply-mentorship-age-input,
+.apply-mentorship-diploma-input {
+  display: flex;
 }
 
 .apply-mentorship-infos {
@@ -96,8 +59,8 @@
 
 .apply-mentorship-form label {
   font-size: 14px;
-  color: #454545;
-  font-weight: bold;
+  color: #8e9291;
+  font-weight: 600;
 }
 
 .apply-mentorship-name,
@@ -127,11 +90,16 @@
 .apply-mentorship-form input {
   width: 100%;
   height: 40px;
-  border-radius: 7px;
-  border: 1px solid rgb(153, 153, 153);
-  background-color: #f9feff;
+  border-radius: 8px;
+  border: 1px solid rgb(59, 59, 59);
+  /* background-color: #f9feff; */
+  background-color: #1d1d1d;
   margin-top: 5px;
   margin-bottom: 20px;
+  color: #ffffff;
+  font-size: 14px;
+  box-sizing: border-box;
+  padding-left: 14px;
 }
 
 .apply-mentorship-name {
@@ -145,18 +113,18 @@
 .apply-mentorship-button-certificate {
   width: 100px;
   height: 40px;
-  border-radius: 30px;
-  background-color: rgb(255, 144, 16);
+  border-radius: 8px;
+  border: 1px solid rgb(59, 59, 59);
+  background-color: #1d1d1d;
   color: #ffffff;
   font-weight: bold;
-  border: none;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   margin-left: 25px;
 }
 
 .apply-mentorship-button-certificate:hover {
-  background-color: rgb(255, 177, 88);
+  background-color: #333333;
 }
 
 .selected-file-name {
@@ -169,12 +137,6 @@
   display: flex;
   align-items: center;
   margin-top: 10px;
-}
-
-.selected-file-name {
-  margin-right: 10px;
-  font-style: italic;
-  color: #555;
 }
 
 .remove-file-button {
@@ -190,19 +152,18 @@
 }
 
 .apply-mentorship-button-submit {
-  width: 85px;
+  width: 100%;
   height: 40px;
-  border-radius: 30px;
-  background-color: rgb(49, 128, 255);
+  border-radius: 8px;
+  border: 1px solid #26815b;
+  background-color: #006239;
   color: #ffffff;
   font-weight: bold;
-  border: none;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-bottom: 20px;
   margin-top: 25px;
 }
 
 .apply-mentorship-button-submit:hover {
-  background-color: rgb(77, 144, 253);
+  background-color: #217953;
 }

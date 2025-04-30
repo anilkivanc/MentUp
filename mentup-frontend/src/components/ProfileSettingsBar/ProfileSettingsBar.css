@@ -1,0 +1,24 @@
+
+.profile-settings-bar {
+  display: block;
+  background-color: #1d1d1d;
+  margin-top: 25px;
+  border-radius: 8px;
+  border: 1px solid rgb(59, 59, 59);
+  padding: 15px;
+}
+
+.profile-settings-bar a {
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  text-align: left;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 8px;
+}
+
+.profile-settings-bar a:hover {
+  background-color: #252525;
+}
