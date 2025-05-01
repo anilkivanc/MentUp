@@ -14,7 +14,7 @@ const MentorLogin = () => {
 
     <div>
       <div className="mentor-login-container" >
-        <div className="logo-name">
+        <div className="-mentor-login-logo-name">
           <a href="/home">MentUp</a>
         </div>
         <div className="mentor-login-box">

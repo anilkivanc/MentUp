@@ -122,25 +122,8 @@
   margin-top: 25px;
 }
 
-.login-button-signup-page {
-  display: inline-block;
-  background: none;
-  border: 1px solid black;
-  color: black;
-  padding: 0.8rem 2rem;
-  border-radius: 3px;
-  cursor: pointer;
-  position: fixed;
-  top: 30px;
-  right: 30px;
-}
-
 .register-button-signup-page:hover {
   background-color: #217953;
-}
-
-.login-button-signup-page:hover {
-  background-color: #fff;
 }
 
 .signup-page-signup-div {

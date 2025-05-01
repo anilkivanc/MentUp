@@ -66,7 +66,7 @@ exports.signup = async (req, res) => {
         });
       }
   
-      // Şifreyi hashle
+      // Şifreyi hashle 
       const hashedPassword = await bcrypt.hash(password, 10);
   
       // Yeni kullanıcı oluştur
