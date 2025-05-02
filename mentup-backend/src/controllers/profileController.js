@@ -11,7 +11,7 @@ exports.getOwnProfile = async (req, res) => {
           {
             model: Profile,
             as: 'profile',
-            attributes: ['user_id', 'bio', 'photo_url', 'phone', 'verification_status', 'occupation', 'birth_place', 'location', 'languages'],
+            attributes: ['user_id', 'bio', 'photo_url', 'phone', 'verification_status', 'college', 'location', 'skills', 'languages'],
             required: false
           }
         ]
@@ -31,16 +31,16 @@ exports.getOwnProfile = async (req, res) => {
 // Kullanıcının kendi profilini oluştur/güncelle
 exports.updateOwnProfile = async (req, res) => {
   const userId = req.user.id;
-  const { bio, photo_url, phone, occupation, birth_place, location, languages } = req.body;
+  const { bio, photo_url, phone, college, location, skills, languages } = req.body;
 
   try {
     const [profile, created] = await Profile.findOrCreate({
       where: { user_id: userId },
-      defaults: { bio, photo_url, phone, verification_status: 'pending' , occupation, birth_place, location, languages }
+      defaults: { bio, photo_url, phone, verification_status: 'pending' , college, location, skills, languages }
     });
 
     if (!created) {
-      await profile.update({ bio, photo_url, phone, occupation, birth_place, location, languages });
+      await profile.update({ bio, photo_url, phone, verification_status: 'pending' , college, location, skills, languages });
     }
 
     res.status(200).json({

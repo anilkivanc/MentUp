@@ -8,9 +8,9 @@ module.exports = (sequelize, DataTypes) => {
     bio: DataTypes.TEXT,
     photo_url: DataTypes.TEXT,
     phone: DataTypes.STRING,
-    occupation: DataTypes.STRING,
-    birth_place: DataTypes.STRING,
+    college: DataTypes.STRING,
     location: DataTypes.STRING,
+    skills: DataTypes.STRING,
     languages: DataTypes.STRING, // istersen ileride JSON olarak tutulabilir
     verification_status: {
       type: DataTypes.ENUM('pending', 'approved', 'rejected'),

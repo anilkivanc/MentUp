@@ -28,7 +28,7 @@ const NavBar = () => {
             <a className="navbar-first-items-about-us" href="/aboutus">Hakkımızda</a>
             <a className="navbar-first-items-contact" href="/contact">İletişim</a>
             <a className="navbar-first-itemss-mentors" href="/mentors">Mentorlarımız</a>
-            <a className="navbar-first-items-pricing" href="/pricing">Üyelikleri Görüntüle</a>
+            {/* <a className="navbar-first-items-pricing" href="/pricing">Üyelikleri Görüntüle</a> */}
           </div>
           <div className="navbar-first-auth-buttons">
             <button className="navbar-first-login-button" onClick={handleLoginClick}>Giriş Yap</button>

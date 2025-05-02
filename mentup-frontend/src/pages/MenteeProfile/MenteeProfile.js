@@ -11,8 +11,7 @@ const MenteeProfile = () => {
   const [tokenChecked, setTokenChecked] = useState(false);
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
-  const [occupation, setOccupation] = useState("");
-  const [birthPlace, setBirthPlace] = useState("");
+  const [college, setCollege] = useState("");
   const [location, setLocation] = useState("");
   const [languages, setLanguages] = useState("");
   const [skills, setSkills] = useState("");
@@ -46,9 +45,9 @@ const MenteeProfile = () => {
   
         setName(user.name || "");
         setSurname(user.surname || "");
-        setOccupation(profile.occupation || "");
-        setBirthPlace(profile.birth_place || "");
+        setCollege(profile.college || "");
         setLocation(profile.location || "");
+        setSkills(profile.skills || "");
         setLanguages(profile.languages || "");
         setProfilePhoto(profile.photo_url || null);
         setTokenChecked(true);
@@ -65,11 +64,12 @@ const MenteeProfile = () => {
     const token = localStorage.getItem("token");
     try {
       const res = await axios.put("http://localhost:5001/profile/me", {
-        photo_url: profilePhoto, // 👈 burada ekledik
-        occupation,
-        birth_place: birthPlace,
-        location,
-        languages,
+        name,
+        surname,
+        photo_url: profilePhoto,
+        college,
+        location, // Eğer boş ise varsayılan değer ekle
+        languages, // Eğer boş ise varsayılan değer ekle
         skills
       }, {
         headers: { Authorization: `Bearer ${token}` }
@@ -81,22 +81,6 @@ const MenteeProfile = () => {
       console.error("Profil güncelleme hatası:", err.response?.data || err.message);
       alert("Hata oluştu");
     }
-  };
-  
-
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        setProfilePhoto(reader.result);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const handlePhotoButtonClick = () => {
-    document.getElementById("fileInput").click();
   };
 
   return (
@@ -145,24 +129,16 @@ const MenteeProfile = () => {
                     </div>
                   </div>
                 </div>
-                {/* <div className="profile-settings-display-name">
-                  <label className="profile-settings-display-name-label">Görünen İsim</label>
-                  <span className="span-required"> *</span>
-                  <div className="profile-settings-display-name-input-div">
-                    <input type="text" className="profile-settings-display-name-input" placeholder="  John_Doe"></input>
-                  </div>
-                </div> */}
                 <div className="profile-settings-profession">
                   <label 
                   className="profile-settings-profession-label"
                   >Okuduğunuz/Mezun Olduğunuz Okul</label>
-                  {/* <span className="span-required"> *</span> */}
                   <div className="profile-settings-profession-input-div">
                     <input 
                     type="text" 
-                    value={occupation}
+                    value={college}
                     className="profile-settings-profession-input"
-                    onChange={(e) => setOccupation(e.target.value)}
+                    onChange={(e) => setCollege(e.target.value)}
                     ></input>
                   </div>
                 </div>
@@ -170,10 +146,9 @@ const MenteeProfile = () => {
                   <div className="profile-settings-location">
                     <label className="profile-settings-location-label">Yaşadığınız Şehir</label>
                     <span className="span-required"> *</span>
-                    {/* <input type="text" className="profile-settings-location-input"></input> */}
                     <select 
-                      value={skills}
-                      onChange={(e) => setSkills(e.target.value)}
+                      value={location}
+                      onChange={(e) => setLocation(e.target.value)}
                       className="profile-settings-industries-input"
                     >
                     <option value="" disabled>Şehir Seçin</option>
@@ -206,27 +181,27 @@ const MenteeProfile = () => {
                   </select>
                 </div>
                 <div className="profile-settings-languages">
-                <label className="profile-settings-languages-label">Bilinen Diller</label>
-                <select 
-                  value={languages}
-                  onChange={(e) => setLanguages(e.target.value)}
-                  className="profile-settings-languages-input"
-                >
-                  <option value="" disabled>Bir Dil Seçin</option>
-                  <option value="Almanca">Almanca</option>
-                  <option value="Arapça">Arapça</option>
-                  <option value="Çince">Çince (Mandarin)</option>
-                  <option value="Fransızca">Fransızca</option>
-                  <option value="Hintçe">Hintçe</option>
-                  <option value="İngilizce">İngilizce</option>
-                  <option value="İspanyolca">İspanyolca</option>
-                  <option value="İtalyanca">İtalyanca</option>
-                  <option value="Japonca">Japonca</option>
-                  <option value="Korece">Korece</option>
-                  <option value="Portekizce">Portekizce</option>
-                  <option value="Rusça">Rusça</option>
-                  <option value="Türkçe">Türkçe</option>
-                </select>
+                  <label className="profile-settings-languages-label">Bilinen Diller</label>
+                  <select 
+                    value={languages}
+                    onChange={(e) => setLanguages(e.target.value)}
+                    className="profile-settings-languages-input"
+                  >
+                    <option value="" disabled>Bir Dil Seçin</option>
+                    <option value="Almanca">Almanca</option>
+                    <option value="Arapça">Arapça</option>
+                    <option value="Çince">Çince (Mandarin)</option>
+                    <option value="Fransızca">Fransızca</option>
+                    <option value="Hintçe">Hintçe</option>
+                    <option value="İngilizce">İngilizce</option>
+                    <option value="İspanyolca">İspanyolca</option>
+                    <option value="İtalyanca">İtalyanca</option>
+                    <option value="Japonca">Japonca</option>
+                    <option value="Korece">Korece</option>
+                    <option value="Portekizce">Portekizce</option>
+                    <option value="Rusça">Rusça</option>
+                    <option value="Türkçe">Türkçe</option>
+                  </select>
               </div>
                 <div className="profile-settings-button-save-div">
                   <button type="button" className="profile-settings-button-save"

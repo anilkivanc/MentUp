@@ -15,7 +15,7 @@ exports.login = async (req, res) => {
             if (isPasswordValid) {
                 // ✅ JWT token oluştur
                 const token = jwt.sign(
-                    { id: user.id, email: user.email, name: user.name }, // payload
+                    { id: user.id, ehmail: user.email, name: user.name }, // payload
                     process.env.JWT_SECRET,
                     { expiresIn: '2h' } // Token 2 saat geçerli
                 );
@@ -100,74 +100,3 @@ exports.signup = async (req, res) => {
       });
     }
   };
-  
-
-// Profil Yönetimi (GET ve PUT için tek endpoint)
-exports.profileManagement = async (req, res) => {
-    const { userId } = req.params; // Kullanıcı ID'si parametreden alınır
-    const { name, surname, displayName, occupation, birthPlace, location, skills, languages } = req.body;
-
-    try {
-        if (req.method === 'GET') {
-            // Profil bilgilerini getir
-            const user = await User.findOne({
-                where: { id: userId },
-                include: [
-                    {
-                        model: UserProfile,
-                        as: 'UserProfile', // İlişki adını modelde tanımladığınız şekilde yazın
-                    },
-                ],
-            });
-
-            if (!user) {
-                return res.status(404).json({ message: 'Kullanıcı bulunamadı!' });
-            }
-
-            res.status(200).json(user);
-        } else if (req.method === 'PUT') {
-            // Kullanıcı tablosundaki bilgileri güncelle
-            const user = await User.findByPk(userId);
-            if (!user) {
-                return res.status(404).json({ message: 'Kullanıcı bulunamadı!' });
-            }
-
-            // Profil tablosunda güncelleme veya ekleme işlemi
-            const [profile, created] = await UserProfile.findOrCreate({
-                where: { userId },
-                defaults: {
-                    userId,
-                    name,
-                    surname,
-                    displayName,
-                    occupation,
-                    birthPlace,
-                    location,
-                    skills,
-                    languages,
-                },
-            });
-
-            if (!created) {
-                // Zaten varsa güncelle
-                await profile.update({
-                    name,
-                    surname,
-                    displayName,
-                    occupation,
-                    birthPlace,
-                    location,
-                    skills,
-                    languages,
-                });
-            }
-
-            res.status(200).json({ message: 'Profil başarıyla güncellendi!', profile });
-        } else {
-            res.status(405).json({ message: 'Bu işlem desteklenmiyor!' });
-        }
-    } catch (error) {
-        console.error('Profil yönetimi hatası:', error);
-        res.status(500).json({ message: 'Bir hata oluştu!', error: error.message });
-    }
-};

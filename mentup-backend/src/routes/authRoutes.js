@@ -10,7 +10,5 @@ router.post('/signup', validate(signupValidation), authController.signup);
 // Login route
 router.post('/login', validate(loginValidation), authController.login);
 
-router.put('/editProfile', authController.profileManagement);
-
 module.exports = router;
 

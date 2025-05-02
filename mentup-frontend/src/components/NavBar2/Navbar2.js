@@ -29,16 +29,20 @@ const NavBar2 = () => {
     };
   }, []);
   return (
-
     <nav className="navbar-secondary">
       <div className="navbar-secondary-content">
-        <div className='navbar-secondary-logo-name'>
-          <a href='/home'>MentUp</a>
+        <div className="navbar-secondary-logo-name">
+          <div className='navbar-secondary-logo-image'/>
+          {/* <img 
+            src="../../images/mentup-logo.png" 
+            alt='Logo' 
+            className='navbar-secondary-logo'></img> */}
+          <a href="/home">MentUp</a>
         </div>
-        <div className='navbar-secondary-apply-mentorship'>
+        <div className="navbar-secondary-apply-mentorship">
           <a href="/applymentorship">Mentorluk İçin Başvur</a>
         </div>
-        <div className='navbar-secondary-items-right-col'>
+        <div className="navbar-secondary-items-right-col">
           <div className="navbar-secondary-items">
             <a href="/browsementors">Mentorlara Göz At</a>
             <a href="/aboutus">Hakkımızda</a>
@@ -49,40 +53,59 @@ const NavBar2 = () => {
           </div>
           <div className="navbar-secondary-options">
             <button className="navbar-secondary-messages-button">
-              <FontAwesomeIcon icon={faMessage} style={{color:"white"}}/>
+              <FontAwesomeIcon icon={faMessage} style={{ color: "white" }} />
             </button>
             <button className="navbar-secondary-notifications-button">
-              <FontAwesomeIcon icon={faBell} style={{color:"white"}}/>
+              <FontAwesomeIcon icon={faBell} style={{ color: "white" }} />
             </button>
             <div className="navbar-secondary-profile">
               <button
                 className="navbar-secondary-profile-button"
                 onClick={toggleDropdown}
               >
-              <div className="navbar-secondary-profile-icon">
-                <FontAwesomeIcon icon={faUser} style={{color:"white"}}/>
+                <div className="navbar-secondary-profile-icon">
+                  <FontAwesomeIcon icon={faUser} style={{ color: "white" }} />
                 </div>
-              <div className="navbar-secondary-arrow-down-icon">
-                <FontAwesomeIcon icon={faAngleDown} style={{color:"white"}}/>
-              </div>
+                <div className="navbar-secondary-arrow-down-icon">
+                  <FontAwesomeIcon
+                    icon={faAngleDown}
+                    style={{ color: "white" }}
+                  />
+                </div>
               </button>
-                {isDropdownVisible && (
+              {isDropdownVisible && (
                 <ul className="navbar-secondary-dropdown-menu">
                   <li>
-                    <a className='navbar-secondary-dropdown-menu-settings' href="/menteeProfile">
-                      <FontAwesomeIcon icon={faGear} style={{color:"black", marginRight:"10px"}} />
-                      Ayarlar</a></li>
-                  <li><a className='navbar-secondary-dropdown-menu-logout' href="/login">
-                  <FontAwesomeIcon icon={faArrowRightFromBracket} style={{color:"black", marginRight:"10px"}}/>
-                  Çıkış Yap</a></li>
+                    <a
+                      className="navbar-secondary-dropdown-menu-settings"
+                      href="/menteeProfile"
+                    >
+                      <FontAwesomeIcon
+                        icon={faGear}
+                        style={{ color: "white", marginRight: "10px" }}
+                      />
+                      Ayarlar
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="navbar-secondary-dropdown-menu-logout"
+                      href="/login"
+                    >
+                      <FontAwesomeIcon
+                        icon={faArrowRightFromBracket}
+                        style={{ color: "white", marginRight: "10px" }}
+                      />
+                      Çıkış Yap
+                    </a>
+                  </li>
                 </ul>
-                )}
+              )}
             </div>
           </div>
         </div>
-      </div>   
+      </div>
     </nav>
-
   );
 };
 export default NavBar2;
