@@ -37,4 +37,19 @@ const loginValidation = Joi.object({
     }),
 });
 
-module.exports = { signupValidation, loginValidation };
+const accountSettingsValidation = Joi.object({
+    email : Joi.string().email().required().messages({
+        'string.email': 'Geçerli bir e-posta adresi giriniz.',
+        'any.required': 'E-posta adresi zorunludur.',
+    }),
+    password : Joi.string().min(6).required().messages({
+        'string.min': 'Şifre en az 6 karakter olmalıdır.',
+        'any.required': 'Şifre alanı zorunludur.',
+    }),
+    newPassword : Joi.string().min(6).required().messages({
+        'string.min': 'Şifre en az 6 karakter olmalıdır.',
+        'any.required': 'Şifre alanı zorunludur.',
+    }),
+}) 
+
+module.exports = { signupValidation, loginValidation, accountSettingsValidation };

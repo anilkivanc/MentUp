@@ -50,8 +50,8 @@ const AdminPanel = () => {
           <a href="#" className="admin-panel-cv-link">CV'yi Görüntüle</a>
         </div>
         <div className="admin-panel-action-buttons">
-          <button className="admin-button approve">Onayla</button>
           <button className="admin-button reject">Reddet</button>
+          <button className="admin-button approve">Onayla</button>
         </div>
       </div>
     </div>

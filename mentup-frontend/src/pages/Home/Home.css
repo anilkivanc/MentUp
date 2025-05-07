@@ -1,7 +1,6 @@
 .home-container {
     /* background: linear-gradient(168.18deg, #101828 22.59%, #6938ef 85.64%), linear-gradient(137.87deg, #101828 37.36%, #8619f5 80.62%); */
     background-color: #121212;
-
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
     margin: 0;
     width: 100vw;
@@ -9,51 +8,9 @@
     overflow-y: auto;
 }
 
-.top-page-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 40px;
-    background: #ffffff;
-    text-align: center;
-    box-shadow: 0 1px 2px #00000014, inset 0 -1px #ced7e0;
-  }
-
-  .top-page-content a {
-    color: #000;
-    text-decoration: none;
-    margin: 0 1em;
-    transition: color 0.3s ease-in-out;
-    display: inline-block;
-  }
-
-  .logo-name {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .auth-buttons button {
-    margin-left: 10px;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .auth-buttons .login {
-    background-color: #ccc;
-    color: #000;
-    border: 1px solid #fff;
-  }
-  
-  .auth-buttons .register {
-    background: #000;
-    color: #fff;
-  }
-
   main .hero {
     text-align: left;
-    padding: 30px 20px;
+    padding: 30px 50px;
     color:  #ffffff;
   }
     
@@ -61,7 +18,6 @@
     font-size: 35px;
     margin-bottom: 20px;
     display: inline-block;
-    margin-top: 0px;
   }
     
   main .hero p {

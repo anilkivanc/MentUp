@@ -1,6 +1,5 @@
 .mentee-profile-container {
   font-family: Arial, Helvetica, sans-serif;
-  /* background: linear-gradient(168.18deg, #101828 22.59%, #6938ef 85.64%), linear-gradient(137.87deg, #101828 37.36%, #8619f5 80.62%); */
   background-color: #121212;
   height: 100vh;
   width: 100vw;
@@ -8,7 +7,8 @@
 }
 
 .mentee-profile-form {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .mentee-profile-form h1 {
@@ -38,7 +38,7 @@
 }
 
 .profile-settings-form {
-  display: inline-block;
+  display: flex;
   background-color: #171717;
   padding: 20px;
   border-radius: 10px;
@@ -46,10 +46,13 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   width: 100%;
   margin-top: 25px;
+  flex-direction: column;
 }
 
 .profile-settings-infos {
   margin: 30px;
+  display: flex;
+  flex-direction: column; /* Her öğeyi alt alta yerleştirir */
 }
 
 .profile-settings-infos label {
@@ -75,22 +78,14 @@
 }
 
 .profile-settings-name-surname {
-  display: flex;
+  display: flex; /* İsim ve soyisim kısmını yanyana yapıyoruz */
   gap: 20px;
 }
 
 .profile-settings-name,
 .profile-settings-surname {
   display: block;
-  width: 50%;
-}
-
-.profile-settings-profession,
-.profile-settings-location,
-.profile-settings-industries,
-.profile-settings-languages {
-  display: block;
-  margin-top: 15px;
+  width: 48%; /* İki eleman arasında boşluk bırakmak için %48 genişlik */
 }
 
 .profile-settings-button-save {

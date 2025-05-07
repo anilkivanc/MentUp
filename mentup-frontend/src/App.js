@@ -18,8 +18,11 @@ import Mentors from './pages/mentors/Mentors';
 import VideoChat from './pages/videochat/VideoChat';
 import AdminPanel from './admin/pages/adminPanel/adminPanel';
 import ForgotPassword from './pages/forgotPassword/ForgotPassword';
+import AdminDashboard from './admin/pages/adminDashboard/AdminDashboard';
+
 
 function App() {
+
   return (
     <div className="App">
       <Router>
@@ -45,6 +48,7 @@ function App() {
           <Route path='/videochat' element={<VideoChat />} />
           <Route path='/adminpanel' element={<AdminPanel />} />
           <Route path='/forgotpassword' element={<ForgotPassword />} />
+          <Route path='/admindashboard' element={<AdminDashboard />} />
 
 
 

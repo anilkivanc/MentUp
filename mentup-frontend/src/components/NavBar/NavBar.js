@@ -17,6 +17,7 @@ const NavBar = () => {
     <nav className="navbar-first">
       <div className="navbar-first-content">
         <div className='navbar-first-logo-name'>
+          <div className='navbar-secondary-logo-image'/>
           <a href='/home'>MentUp</a>
         </div>
         <div className='navbar-first-apply-mentorship'>
@@ -25,10 +26,9 @@ const NavBar = () => {
         <div className='navbar-first-items-right-col'>
           <div className="navbar-first-items">
             <a className="navbar-first-items-browse-mentors" href="/browsementors">Mentorlara Göz At</a>
-            <a className="navbar-first-items-about-us" href="/aboutus">Hakkımızda</a>
-            <a className="navbar-first-items-contact" href="/contact">İletişim</a>
             <a className="navbar-first-itemss-mentors" href="/mentors">Mentorlarımız</a>
-            {/* <a className="navbar-first-items-pricing" href="/pricing">Üyelikleri Görüntüle</a> */}
+            <a className="navbar-first-items-contact" href="/contact">İletişim</a>
+            <a className="navbar-first-items-about-us" href="/aboutus">Hakkımızda</a>
           </div>
           <div className="navbar-first-auth-buttons">
             <button className="navbar-first-login-button" onClick={handleLoginClick}>Giriş Yap</button>

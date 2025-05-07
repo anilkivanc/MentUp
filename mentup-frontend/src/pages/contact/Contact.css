@@ -1,5 +1,6 @@
 .contact-container {
-  background: linear-gradient(135deg, #101828 30%, #6a33ff 100%);
+  /* background: linear-gradient(135deg, #101828 30%, #6a33ff 100%); */
+  background-color: #121212;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   width: 100vw;
@@ -16,31 +17,32 @@
   color: #fff;
   font-weight: 500;
   font-size: 36px;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
 .contact-form {
-  background-color: #fff;
-  border-radius: 15px;
+  background-color: #171717;
   width: 60%;
   margin: 40px auto;
   padding: 30px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: 1px solid rgb(59, 59, 59);
   text-align: left;
 }
 
 .contact-form h2 {
   font-size: 28px;
   font-weight: 700;
-  color: #101828;
+  color: #ffffff;
   margin-bottom: 20px;
   text-align: center;
 }
 
 .contact-form h3 {
-  font-size: 18.5px;
-  color: #101828;
+  font-size: 16px;
+  color: #ffffff;
   line-height: 1.8;
   margin-bottom: 30px;
   font-weight: 400;
@@ -50,10 +52,14 @@
   margin-bottom: 30px;
 }
 
+.contact-form-section a {
+  color: #fff;
+}
+
 .contact-form-section h4 {
   font-size: 20px;
   font-weight: 600;
-  color: #101828;
+  color: #ffffff;
   margin-bottom: 10px;
   text-align: left;
 }
@@ -69,7 +75,7 @@
 }
 
 .contact-form-infos a:hover {
-  color: #101828;
+  color: #ffffff;
   text-decoration: underline;
 }
 
@@ -78,7 +84,7 @@
   align-items: center;
   font-size: 18px;
   font-weight: 500;
-  color: #6a33ff;
+  color: #006239;
   margin-bottom: 15px;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -103,7 +109,7 @@ transform: scale(1.02);
 
 .contact-form-thanks a {
   font-size: 20px;
-  color: #6a33ff;
+  color: #006239;
   font-weight: 700;
   display: flex;
   justify-content: center;
@@ -121,7 +127,7 @@ transform: scale(1.02);
 }
 
 .contact-container::-webkit-scrollbar-thumb {
-  background: #6a33ff;
+  background: #ffffff;
   border-radius: 4px;
 }
 

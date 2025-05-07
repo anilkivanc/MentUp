@@ -134,7 +134,7 @@ const BrowseMentors = () => {
               <div className="browse-mentors-search-filters" ref={menuRef}>
                 <div className="browse-mentors-search-tags">
                   {menuData.map((menu, index) => (
-                    <div key={index} className="menu-filter">
+                    <div key={index} className="browse-mentors-menu-filter">
                       <button
                         className={`browse-mentors-search-tag-${menu.type}`}
                         onClick={() => toggleMenu(index)}
@@ -145,7 +145,7 @@ const BrowseMentors = () => {
                         </span>
                       </button>
                       {openMenuIndex === index && (
-                        <ul className={`dropdown-menu-${menu.type}`}>
+                        <ul className={`browse-mentors-dropdown-menu-${menu.type}`}>
                           {menu.options.map((option, i) => (
                             <li
                               key={i}

@@ -15,15 +15,15 @@ const Contact = () => {
       </header>
       <main>
         <div className="contact-div">
-          <h1 className="contact-title">Bizimle İletişime Geç!</h1>
+          <h1 className="contact-title">İletişim Bilgilerimiz</h1>
           <div className="contact-form">
-            <h2 className="contact-form-title">İletişim Bilgilerimiz</h2>
+            <h2 className="contact-form-title">Bizimle İletişime Geç!</h2>
             <h3 className="contact-form-info-text">
               Herhangi bir sorunuz, yaşadığınız bir problem ya da öneriniz varsa bizimle iletişime geçmekten çekinmeyin. Size en kısa sürede yardımcı olmaktan mutluluk duyarız.
             </h3>
 
             <div className="contact-form-section">
-              <h4>E-mail</h4>
+              <h4>E-Posta</h4>
               <a>mentup24@gmail.com</a>
             </div>
 

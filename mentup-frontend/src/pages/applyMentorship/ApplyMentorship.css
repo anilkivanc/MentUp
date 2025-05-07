@@ -15,7 +15,6 @@
 
 .apply-mentorship-div-title {
   margin-top: 20px;
-  margin-bottom: 10px;
   font-size: 30px;
   font-weight: 500;
   display: block;
@@ -24,12 +23,12 @@
 
 .apply-mentorship-form {
   display: inline-block;
-  /* background-color: #ffffff; */
   background-color: #171717;
   width: 450px;
   margin-top: 25px;
   border-radius: 10px;
   border: 1px solid rgb(59, 59, 59);
+  margin-bottom: 40px;
 }
 
 .apply-mentorship-div {
@@ -116,7 +115,7 @@
   border-radius: 8px;
   border: 1px solid rgb(59, 59, 59);
   background-color: #1d1d1d;
-  color: #ffffff;
+  color: #8e9291;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -161,9 +160,73 @@
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
 .apply-mentorship-button-submit:hover {
   background-color: #217953;
+}
+.apply-mentorship-search-tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.apply-mentorship-search-tags button{
+  display: inline-block;
+  width: max-content;
+  height: 35px;
+  text-align: left;
+  border-radius: 5px;
+  border: 1px solid rgb(59, 59, 59);
+  background-color: #1d1d1d;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  padding: 10px 15px;
+}
+
+.apply-mentorship-search-tags button:hover {
+  background-color: #333333;
+}
+
+.apply-mentorship-search-tags span {
+  font-size: 14px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #8e9291;
+  font-weight: 400;
+}
+
+
+.apply-mentorship-menu-filter {
+  position: relative;
+}
+
+
+.apply-mentorship-menu-filter ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1d1d1d;
+  color: #fff;
+  border: 1px solid rgb(59, 59, 59);
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 10px 0;
+  margin: 5px 0 0 0;
+  z-index: 100;
+}
+
+.apply-mentorship-menu-filter li {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.apply-mentorship-menu-filter ul li:hover {
+  background-color: #171717;
 }

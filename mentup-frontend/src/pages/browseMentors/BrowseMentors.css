@@ -1,5 +1,6 @@
 .browse-mentors-container {
-  background: linear-gradient(168.18deg, #101828 22.59%, #6938ef 85.64%), linear-gradient(137.87deg, #101828 37.36%, #8619f5 80.62%);
+  /* background: linear-gradient(168.18deg, #101828 22.59%, #6938ef 85.64%), linear-gradient(137.87deg, #101828 37.36%, #8619f5 80.62%); */
+  background-color: #121212;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
   height: 100vh;
   width: 100vw;
@@ -18,7 +19,7 @@
   display: block;
   margin-left: 30px;
   margin-top: 30px;
-  background-color: #f5f5f5;
+  background-color: #171717;
   border-radius: 8px;
   width: 40%;
   height: 110px;
@@ -27,8 +28,8 @@
 .browse-mentors-search-input-wrapper {
   display: flex;
   align-items: center;
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
+  background-color: #171717;
+  border: 1px solid rgb(59, 59, 59);
   border-radius: 8px;
   padding: 5px 10px;
   height: 28px;
@@ -42,7 +43,7 @@
   flex: 1;
   font-size: 14px;
   padding-left: 10px;
-  color: #333;
+  color: #8e9291;
 }
 
 .browse-mentors-search-input-wrapper input::placeholder {
@@ -50,7 +51,7 @@
 }
 
 .browse-mentors-search-icon {
-  background-color: none;
+  background-color: #171717;
   border: none;
   display: flex;
   align-items: center;
@@ -69,8 +70,12 @@
 
 .browse-mentors-search-tags {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   padding: 20px;
+  border-radius: 8px;
+  background-color: #171717;
+  /* border: 1px solid rgb(59, 59, 59); */
   justify-content: space-between;
   gap: 15px;
 }
@@ -80,17 +85,16 @@
   width: max-content;
   height: 35px;
   text-align: left;
-  border-radius: 5px;
-  border: 1px solid #c0c0c0;
-  background-color: #ffffff;
-  transition: border 0.3s ease, box-shadow 0.3s ease; /* Hover animasyonu */
+  border-radius: 8px;
+  border: 1px solid rgb(59, 59, 59);
+  background-color: #1d1d1d;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   cursor: pointer;
   padding: 10px 15px;
-
 }
 
 .browse-mentors-search-tags button:hover {
-  border: 1px solid #6938ef;
+  border: 1px solid #006239;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -98,22 +102,23 @@
   font-size: 14px;
   margin-left: 10px;
   margin-right: 10px;
-  color: #3a3a3a;
+  color: #8e9291;
   font-weight: 400;
 }
 
 
-.menu-filter {
+.browse-mentors-menu-filter {
   position: relative;
 }
 
 
-.menu-filter ul {
+.browse-mentors-menu-filter ul {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: white;
-  border: 1px solid #ccc;
+  background-color: #1d1d1d;
+  color: #fff;
+  border: 1px solid rgb(59, 59, 59);
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   list-style: none;
@@ -122,14 +127,14 @@
   z-index: 100;
 }
 
-.menu-filter li {
+.browse-mentors-menu-filter li {
   padding: 10px 15px;
   cursor: pointer;
   transition: background-color 0.25s ease;
 }
 
-.menu-filter ul li:hover {
-  background-color: #f1f1f1;
+.browse-mentors-menu-filter ul li:hover {
+  background-color: #171717;
 }
 
 .mentor-list-container {

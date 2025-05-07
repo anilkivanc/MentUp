@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f0f2f5;
+  background-color: #121212;
   min-height: 100vh;
   padding: 40px;
 }
@@ -10,15 +10,17 @@
 .admin-panel-title {
   font-size: 28px;
   margin-bottom: 30px;
-  color: #333;
+  color: #fff;
   font-weight: 600;
 }
 
 .admin-panel-form-card {
-  background-color: #ffffff;
+  background-color: #171717;
   padding: 30px 40px;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  border: 1px solid rgb(59, 59, 59);
   width: 100%;
   max-width: 600px;
 }
@@ -30,23 +32,62 @@
 .admin-panel-form-item label {
   display: block;
   font-weight: 600;
-  color: #444;
+  color: #8e9291;
   margin-bottom: 6px;
+  font-size: 14px;
 }
 
 .admin-panel-form-item p {
   font-size: 15px;
-  color: #222;
+  color: #fff;
   margin: 0;
-  background-color: #f9f9f9;
+  background-color: #1d1d1d;
   padding: 10px 14px;
-  border-radius: 6px;
-  border: 1px solid #ddd;
+  border-radius: 10px;
+  border: 1px solid rgb(59, 59, 59);
 }
 
 .admin-panel-cv-link {
   display: inline-block;
-  color: #4a00e0;
+  color: #38c98d;
   text-decoration: underline;
   margin-top: 4px;
 }
+
+  
+.admin-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.admin-panel-action-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.admin-button.approve {
+  background-color: #006239;
+  color: white;
+}
+
+.admin-button.approve:hover {
+  background-color: #39755b;
+}
+
+.admin-button.reject {
+  background-color: #8e2e28;
+  color: white;
+}
+
+.admin-button.reject:hover {
+  background-color: #96433d;
+}
+

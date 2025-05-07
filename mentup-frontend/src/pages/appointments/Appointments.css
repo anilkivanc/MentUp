@@ -1,5 +1,6 @@
 .appointments-container {
-  background: linear-gradient(168.18deg, #101828 22.59%, #6938ef 85.64%), linear-gradient(137.87deg, #101828 37.36%, #8619f5 80.62%);
+  /* background: linear-gradient(168.18deg, #101828 22.59%, #6938ef 85.64%), linear-gradient(137.87deg, #101828 37.36%, #8619f5 80.62%); */
+  background-color: #121212;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
   margin: 0;
   width: 100vw;
@@ -26,9 +27,11 @@
 .appointment-card {
   display: flex;
   width: 70%;
-  background-color: #fff;
+  background-color: #171717;
   padding: 10px;
-  border-radius: 6px;
+  border-radius: 10px;
+  border: 1px solid rgb(59, 59, 59);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   margin-top: 25px;
 }
 
@@ -57,6 +60,7 @@
   font-weight: bold;
   margin-bottom: 10px;
   margin-top: 10px;
+  color: #fff;
 }
 
 .appointment-mentor-details {
@@ -69,11 +73,14 @@
 .appointment-name {
   font-weight: 600;
   font-size: 16px;
+  color: #d7d7d7;
+
 }
 
 .appointment-job {
-  color: #4d4d4d;
-  background-color: rgb(226, 226, 226);
+  font-weight: bold;
+  color: #3a3a3a;
+  background-color: #b1b1b1;
   margin-left: 10px;
   margin: 6px;
   border-radius: 12px;
@@ -92,15 +99,17 @@
 .appointment-description p{
   margin-right: 32px;
   font-size: 14px;
+  color: #8e9291;
 }
 .message-button {
   width: 100px;
   height: 40px;
-  border-radius: 30px;
+  border-radius: 8px;
   /* margin-left: 270px; */
   margin-right: 20px;
   margin-left: 50px;
   background-color: rgb(255, 144, 16);
+  border: 1px solid rgb(255, 136, 0);;
   color: #ffffff;
   font-weight: bold;
   border: none;
@@ -115,9 +124,10 @@
 .appointment-button {
   width: 200px;
   height: 40px;
-  border-radius: 30px;
+  border-radius: 8px;
   /* margin-left: 270px; */
   background-color: rgb(49, 128, 255);
+  border: 1px solid rgb(0, 98, 255);
   color: #ffffff;
   font-weight: bold;
   border: none;
@@ -132,9 +142,10 @@
 .appointment-review-button {
   width: 200px;
   height: 40px;
-  border-radius: 30px;
+  border-radius: 8px;
   /* margin-left: 270px; */
-  background-color: #007a10;
+  background-color: #006239;
+  border: 1px solid #26815b;
   color: #ffffff;
   font-weight: bold;
   border: none;
@@ -143,5 +154,5 @@
 }
 
 .appointment-review-button:hover {
-  background-color: #2e953c;
+  background-color: #217953;
 }

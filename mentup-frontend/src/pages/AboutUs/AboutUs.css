@@ -1,5 +1,7 @@
 .about-us-container {
-  background: linear-gradient(168.18deg, #101828 22.59%, #6938ef 85.64%), linear-gradient(137.87deg, #101828 37.36%, #8619f5 80.62%);
+  /* background: linear-gradient(168.18deg, #101828 22.59%, #6938ef 85.64%), linear-gradient(137.87deg, #101828 37.36%, #8619f5 80.62%); */
+  background-color: #121212;
+  ;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   width: 100vw;
@@ -10,24 +12,25 @@
 .about-us-div h1 {
   color: #ffffff;
   font-weight: 500;
-  margin-left: 80px;
-  margin-top: 30px;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .about-us-form {
-  background-color: #ffffff;
-  border-radius: 1rem;
+  background-color: #171717;
   width: 80%;
   margin: 25px auto;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: 1px solid rgb(59, 59, 59);
 }
 
 .about-us-form h2 {
   margin: 15px 30px;
   font-size: 25px;
   font-weight: 700;
-  color: #101828;
+  color: #ffffff;
   display: flex;
   align-items: center;
 }
@@ -44,10 +47,11 @@
   display: flex;
   align-items: center;
   line-height: 1.6;
+  color: #8e9291;
 }
 
 .list-icon {
-  color: #6938ef;
+  color: #006239;
   font-size: 12px;
   margin-right: 10px;
 }
@@ -61,7 +65,7 @@
 }
 
 .about-us-container::-webkit-scrollbar-thumb {
-  background: #6938ef;
+  background: #ffffff;
   border-radius: 4px;
 }
 

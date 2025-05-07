@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     college: DataTypes.STRING,
     location: DataTypes.STRING,
     skills: DataTypes.STRING,
-    languages: DataTypes.STRING, // istersen ileride JSON olarak tutulabilir
+    languages: DataTypes.STRING,
     verification_status: {
       type: DataTypes.ENUM('pending', 'approved', 'rejected'),
       defaultValue: 'pending',

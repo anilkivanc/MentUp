@@ -5,6 +5,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import NavBar from '../../components/NavBar/NavBar';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import ChatWidget from '../../components/chatWidget/chatWidget';
+import NavBar2 from "../../components/NavBar2/Navbar2";
 
 const Home = () => {
   const handleSearch = () => {

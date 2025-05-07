@@ -16,7 +16,7 @@ const AboutUs = () => {
           <div className="about-us-form">
             <section className="about-us-section">
               <h2 className="about-us-form-mission-title">
-                <FontAwesomeIcon icon={faLightbulb} style={{ marginRight: "10px", color: "#6938ef" }} />
+                <FontAwesomeIcon icon={faLightbulb} style={{ marginRight: "10px", color: "#fff" }} />
                 Misyon
               </h2>
               <ul>
@@ -37,7 +37,7 @@ const AboutUs = () => {
 
             <section className="about-us-section">
               <h2 className="about-us-form-vision-title">
-                <FontAwesomeIcon icon={faUserGraduate} style={{ marginRight: "10px", color: "#6938ef" }} />
+                <FontAwesomeIcon icon={faUserGraduate} style={{ marginRight: "10px", color: "#fff" }} />
                 Vizyon
               </h2>
               <ul>
@@ -58,7 +58,7 @@ const AboutUs = () => {
 
             <section className="about-us-section">
               <h2 className="about-us-form-values-title">
-                <FontAwesomeIcon icon={faHandshake} style={{ marginRight: "10px", color: "#6938ef" }} />
+                <FontAwesomeIcon icon={faHandshake} style={{ marginRight: "10px", color: "#fff" }} />
                 Değerlerimiz
               </h2>
               <ul>
@@ -79,7 +79,7 @@ const AboutUs = () => {
 
             <section className="about-us-section">
               <h2 className="about-us-form-team-title">
-                <FontAwesomeIcon icon={faUsers} style={{ marginRight: "10px", color: "#6938ef" }} />
+                <FontAwesomeIcon icon={faUsers} style={{ marginRight: "10px", color: "#fff" }} />
                 Ekibimiz
               </h2>
 

@@ -7,10 +7,35 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';  // Eğer logout endpoint’in varsa
 
-
-const NavBar2 = () => {
+const NavBar2 = () => {  
   const [isDropdownVisible, setDropdownVisible] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await axios.post(
+        'http://localhost:5001/auth/logout',
+        {}, 
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`  // Burada düzeltme yapıldı
+          }
+        }
+      );
+    } catch (e) {
+      console.warn('Server logout hatası (yine de devam ediyoruz):', e);
+    }
+
+    // Client’ta token ve user bilgisini sil
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+
+    // Giriş sayfasına yönlendir
+    navigate('/login');
+  };
 
   const toggleDropdown = () => {
     setDropdownVisible((prevState) => !prevState);
@@ -28,15 +53,12 @@ const NavBar2 = () => {
       document.removeEventListener('click', closeDropdown);
     };
   }, []);
+
   return (
     <nav className="navbar-secondary">
       <div className="navbar-secondary-content">
         <div className="navbar-secondary-logo-name">
           <div className='navbar-secondary-logo-image'/>
-          {/* <img 
-            src="../../images/mentup-logo.png" 
-            alt='Logo' 
-            className='navbar-secondary-logo'></img> */}
           <a href="/home">MentUp</a>
         </div>
         <div className="navbar-secondary-apply-mentorship">
@@ -45,11 +67,10 @@ const NavBar2 = () => {
         <div className="navbar-secondary-items-right-col">
           <div className="navbar-secondary-items">
             <a href="/browsementors">Mentorlara Göz At</a>
-            <a href="/aboutus">Hakkımızda</a>
-            <a href="/contact">İletişim</a>
             <a href="/mentors">Mentorlarımız</a>
-            <a href="/pricing">Fiyatlar</a>
             <a href="/appointments">Görüşmelerim</a>
+            <a href="/contact">İletişim</a>
+            <a href="/aboutus">Hakkımızda</a>
           </div>
           <div className="navbar-secondary-options">
             <button className="navbar-secondary-messages-button">
@@ -76,6 +97,22 @@ const NavBar2 = () => {
               {isDropdownVisible && (
                 <ul className="navbar-secondary-dropdown-menu">
                   <li>
+                    <a 
+                      className="navbar-secondary-profile-info"
+                      href='/menteeprofile'
+                    >
+                      <div className='navbar-secondary-profile-image'></div>
+                        <div className="navbar-profile-details">
+                          <span className="navbar-profile-name">Buğra Batur</span>
+                          <p className="navbar-view-profile-link">Profili Görüntüle</p>
+                        </div>
+                    </a>
+                  </li>
+                  {/* Profil Bilgileri Üst Kısımda */}
+
+
+                  {/* Menü Öğeleri */}
+                  <li>
                     <a
                       className="navbar-secondary-dropdown-menu-settings"
                       href="/menteeProfile"
@@ -90,7 +127,7 @@ const NavBar2 = () => {
                   <li>
                     <a
                       className="navbar-secondary-dropdown-menu-logout"
-                      href="/login"
+                      href='/login'
                     >
                       <FontAwesomeIcon
                         icon={faArrowRightFromBracket}
@@ -108,4 +145,5 @@ const NavBar2 = () => {
     </nav>
   );
 };
+
 export default NavBar2;

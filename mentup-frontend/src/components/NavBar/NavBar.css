@@ -10,7 +10,7 @@
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 40px;
+  padding: 10px 20px;
   /* background: #ffffff; */
   text-align: center;
   /* box-shadow: 0 1px 2px #00000014, inset 0 -1px #ced7e0; */
@@ -33,17 +33,27 @@
   transform: scale(1.03);
 }
 
+.navbar-secondary-logo-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-image: url('../../images/mentup-logo.png');
+  background-size: cover;
+  background-position: center; 
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  background-color: transparent;
+  object-fit: cover;
+}
+
 .navbar-first-logo-name {
   transition: color 0.3 ease;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-
-.navbar-first-logo-name a {
-  font-size: 18px;
-  font-weight: 600;
 }
 
 .navbar-first-logo-name a:hover {
