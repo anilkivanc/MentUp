@@ -7,10 +7,39 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';        // eğer logout endpoint’in varsa
+
 
 
 const NavBar2 = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    // 1) (Opsiyonel) Eğer backend’de /auth/logout endpoint’in varsa:
+    try {
+      await axios.post(
+        'http://localhost:5001/auth/logout',
+        {}, 
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`
+          }
+        }
+      );
+    } catch (e) {
+      console.warn('Server logout hatası (yine de devam ediyoruz):', e);
+    }
+
+    // 2) Client’ta token ve user bilgisini sil
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+
+    // 3) Giriş sayfasına yönlendir
+    navigate('/login');
+  };
 
   const toggleDropdown = () => {
     setDropdownVisible((prevState) => !prevState);
@@ -88,16 +117,16 @@ const NavBar2 = () => {
                     </a>
                   </li>
                   <li>
-                    <a
+                    <button
                       className="navbar-secondary-dropdown-menu-logout"
-                      href="/login"
+                      onClick={handleLogout}
                     >
                       <FontAwesomeIcon
                         icon={faArrowRightFromBracket}
                         style={{ color: "white", marginRight: "10px" }}
                       />
                       Çıkış Yap
-                    </a>
+                    </button>
                   </li>
                 </ul>
               )}

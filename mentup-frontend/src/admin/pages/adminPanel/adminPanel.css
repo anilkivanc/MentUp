@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f0f2f5;
+  background-color: #121212;
   min-height: 100vh;
   padding: 40px;
 }
@@ -10,17 +10,18 @@
 .admin-panel-title {
   font-size: 28px;
   margin-bottom: 30px;
-  color: #333;
+  color: #ffffff;
   font-weight: 600;
 }
 
 .admin-panel-form-card {
-  background-color: #ffffff;
-  padding: 30px 40px;
-  border-radius: 12px;
+  background-color: #171717;
+  padding:  20px;
+  border-radius: 10px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   width: 100%;
   max-width: 600px;
+  border: 1px solid rgb(59,59,59);
 }
 
 .admin-panel-form-item {
@@ -30,23 +31,23 @@
 .admin-panel-form-item label {
   display: block;
   font-weight: 600;
-  color: #444;
+  color: #8e9291;
   margin-bottom: 6px;
 }
 
 .admin-panel-form-item p {
   font-size: 15px;
-  color: #222;
+  color: #ffffff;
   margin: 0;
-  background-color: #f9f9f9;
+  background-color: #1d1d1d;
   padding: 10px 14px;
   border-radius: 6px;
-  border: 1px solid #ddd;
+  border: 1px solid rgb(59,59,59);
 }
 
 .admin-panel-cv-link {
   display: inline-block;
-  color: #4a00e0;
+  color: #1694d7;
   text-decoration: underline;
   margin-top: 4px;
 }

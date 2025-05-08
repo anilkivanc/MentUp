@@ -1,17 +1,12 @@
+// routes/index.js
 const express = require('express');
-const router = express.Router();
-const authRoutes = require('./authRoutes');
-const profileRoutes = require('./profileRoutes');
+const router  = express.Router();
+const authRoutes            = require('./authRoutes');
+const profileRoutes         = require('./profileRoutes');
+const accountSettingsRoutes = require('./accountSettingsRoutes');
 
-
-// Health-check
-router.get('/', (req, res) => {
-  res.send('API is working');
-});
-
-// Auth işlemleri (signup, login, profile)
-router.use('/auth', authRoutes);
-
+router.get('/', (_,res) => res.send('API is working'));
+router.use('/auth',    authRoutes);
 router.use('/profile', profileRoutes);
 
 module.exports = router;

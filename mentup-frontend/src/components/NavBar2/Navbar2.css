@@ -169,6 +169,17 @@
   font-weight: 500;
 }
 
+.navbar-secondary-dropdown-menu-logout{
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  text-align: left; /* Metni sola hizalar */
+  white-space: nowrap; /* Tek satırda tutar, taşarsa kaydırmaz */
+  gap: 10px;
+  padding: 5px;
+  font-weight: 500;
+}
+
 .navbar-secondary-dropdown-menu {
   opacity: 0;
   transform: translateY(-10px);

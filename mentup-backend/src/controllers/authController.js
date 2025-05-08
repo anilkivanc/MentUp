@@ -1,4 +1,4 @@
-const { User, userProfile } = require('../models');
+const { User } = require('../models');
 const bcrypt = require('bcrypt'); // bcrypt kütüphanesini ekle
 
 // Login işlemi
