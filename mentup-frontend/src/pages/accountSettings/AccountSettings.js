@@ -1,54 +1,67 @@
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import './AccountSettings.css'
-import NavBar2 from "../../components/NavBar2/Navbar2";
+import './AccountSettings.css';
 import ProfilePhotoUpload from "../../components/ProfilePhotoUpload/ProfilePhotoUpload";
 import ProfileSettingsBar from "../../components/ProfileSettingsBar/ProfileSettingsBar";
 
 const AccountSettings = () => {
-  const [email, setEmail] = useState("");  // Destructuring düzeltildi
-  const [currentPassword, setCurrentPassword] = useState(""); // Mevcut şifre için state
-  const [newPassword, setNewPassword] = useState(""); // Yeni şifre için state
-  const [confirmPassword, setConfirmPassword] = useState(""); // Yeni şifre (tekrar) için state
+  const [profilePhoto, setProfilePhoto] = useState(null); // Profil fotoğrafı state
+  const [email, setEmail] = useState("");
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [currentPasswordError, setCurrentPasswordError] = useState("");
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token');
     if (!token) {
-      window.location.href = "/login";
+      window.location.href = "/login"; // Kullanıcı giriş yapmamışsa yönlendirme
       return;
     }
-  
-    // E-posta bilgisini almak için GET isteği
+
+    // Profil bilgilerini alıyoruz
     axios
-      .get("http://localhost:5001/accountSettings/getEmail", {
+      .get("http://localhost:5001/profile/me", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
-        const user = res.data;
-        setEmail(user.email);
+        const profile = res.data.profile || {};
+        setProfilePhoto(profile.photo_url || null); // Profil fotoğrafını ayarla
+        setEmail(res.data.email || "");
       })
       .catch((err) => {
-        console.error("E-posta verisi alınamadı:", err);
+        console.error("Profil verisi alınamadı:", err);
       });
   }, []);
+
+  const handlePhotoSave = async (newPhotoUrl) => {
+    const token = localStorage.getItem("token");
+    try {
+      await axios.put(
+        "http://localhost:5001/profile/me",
+        { photo_url: newPhotoUrl },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      setProfilePhoto(newPhotoUrl); // Yeni fotoğrafı state'e kaydet
+      alert("Profil fotoğrafı güncellendi!");
+    } catch (err) {
+      console.error("Profil fotoğrafı güncellenemedi:", err);
+      alert("Bir hata oluştu.");
+    }
+  };
 
   const handleSaveClick = async () => {
     const token = localStorage.getItem("token");
 
     try {
-      // Şifre doğrulama
       const res = await axios.post("http://localhost:5001/accountSettings/checkPassword", {
-        currentPassword
+        currentPassword,
       }, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
       if (res.data.isValid) {
-        // Yeni şifre kontrolü
         if (newPassword.length < 6) {
           setPasswordError("Yeni şifre en az 6 karakter olmalı.");
           return;
@@ -61,7 +74,6 @@ const AccountSettings = () => {
 
         setPasswordError(""); // Hata yoksa sıfırla
 
-        // Şifreyi güncelleme işlemi
         const updateRes = await axios.post("http://localhost:5001/accountSettings/changePassword", {
           currentPassword,
           newPassword,
@@ -81,12 +93,9 @@ const AccountSettings = () => {
     }
   };
   
-  
-  
   return (
     <div className="account-settings-profile-container">
       <header>
-        <NavBar2 />
       </header>
 
       <main>
@@ -94,7 +103,10 @@ const AccountSettings = () => {
           <h1 className="mentee-profile-title">Ayarlar</h1>
           <div className="all-settings-form">
             <div className="photo-settings-card">
-              <ProfilePhotoUpload />
+            <ProfilePhotoUpload 
+              onPhotoChange = {handlePhotoSave}
+              profilePhoto = {profilePhoto}
+              />
               <ProfileSettingsBar />
             </div>
             <div>

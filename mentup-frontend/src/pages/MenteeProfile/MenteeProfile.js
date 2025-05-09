@@ -1,9 +1,107 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import "./MenteeProfile.css";
-import NavBar2 from "../../components/NavBar2/Navbar2";
 import ProfileSettingsBar from "../../components/ProfileSettingsBar/ProfileSettingsBar";
 import ProfilePhotoUpload from "../../components/ProfilePhotoUpload/ProfilePhotoUpload";
+
+const CustomDropdown = ({ options, selectedOptions, setSelectedOptions, label }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => setIsOpen(!isOpen);
+
+  const handleOptionClick = (option) => {
+    if (selectedOptions.includes(option)) {
+      setSelectedOptions(selectedOptions.filter((item) => item !== option));
+    } else {
+      setSelectedOptions([...selectedOptions, option]);
+    }
+  };
+
+  const handleOutsideClick = (event) => {
+    if (!event.target.closest(".custom-dropdown")) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleOutsideClick);
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, []);
+
+  return (
+    <div className="custom-dropdown">
+      <label className="custom-dropdown-label">{label}</label>
+      <div className="custom-dropdown-input" onClick={toggleDropdown}>
+        {selectedOptions.length > 0 ? selectedOptions.join(", ") : "Seçim yapın"}
+      </div>
+      {isOpen && (
+        <div className="custom-dropdown-menu">
+          {options.map((option, index) => (
+            <div
+              key={index}
+              className={`custom-dropdown-option ${
+                selectedOptions.includes(option) ? "selected" : ""
+              }`}
+              onClick={() => handleOptionClick(option)}
+            >
+              {option}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+const SingleSelectDropdown = ({ options, selectedOption, setSelectedOption, label }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => setIsOpen(!isOpen);
+
+  const handleOptionClick = (option) => {
+    setSelectedOption(option);
+    setIsOpen(false); // Seçim yapıldıktan sonra dropdown'ı kapat
+  };
+
+  const handleOutsideClick = (event) => {
+    if (!event.target.closest(".custom-dropdown")) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleOutsideClick);
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, []);
+
+  return (
+    <div className="custom-dropdown">
+      <label className="custom-dropdown-label">{label}</label>
+      <div className="custom-dropdown-input" onClick={toggleDropdown}>
+        {selectedOption || "Seçim yapın"}
+      </div>
+      {isOpen && (
+        <div className="custom-dropdown-menu">
+          {options.map((option, index) => (
+            <div
+              key={index}
+              className={`custom-dropdown-option ${
+                selectedOption === option ? "selected" : ""
+              }`}
+              onClick={() => handleOptionClick(option)}
+            >
+              {option}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 const MenteeProfile = () => {
   const [profilePhoto, setProfilePhoto] = useState(null);
@@ -12,11 +110,11 @@ const MenteeProfile = () => {
   const [surname, setSurname] = useState("");
   const [college, setCollege] = useState("");
   const [location, setLocation] = useState("");
-  const [languages, setLanguages] = useState("");
-  const [skills, setSkills] = useState("");
+  const [languages, setLanguages] = useState([]);
+  const [skills, setSkills] = useState([]);
   const [bio, setBio] = useState("");
   const [phone, setPhone] = useState("");
-  const [phoneError, setPhoneError] = useState("");  // Error state for phone validation
+  const [phoneError, setPhoneError] = useState("");
 
   const cities = [
     "Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin", "Aydın", "Balıkesir",
@@ -28,6 +126,15 @@ const MenteeProfile = () => {
     "Trabzon", "Tunceli", "Şanlıurfa", "Uşak", "Van", "Yozgat", "Zonguldak", "Aksaray", "Bayburt", "Karaman",
     "Kırıkkale", "Batman", "Şırnak", "Bartın", "Ardahan", "Iğdır", "Yalova", "Karabük", "Kilis", "Osmaniye",
     "Düzce"
+  ];
+
+  const skillOptions = [
+    "C", "C++", "C#", "CSS", "HTML", "Java", "JavaScript", "Kotlin", "PHP", "Python", "R", "TypeScript"
+  ];
+
+  const languageOptions = [
+    "Almanca", "Arapça", "Çince (Mandarin)", "Fransızca", "Hintçe", "İngilizce", "İspanyolca",
+    "İtalyanca", "Japonca", "Korece", "Portekizce", "Rusça", "Türkçe"
   ];
 
   useEffect(() => {
@@ -49,9 +156,9 @@ const MenteeProfile = () => {
         setSurname(user.surname || "");
         setCollege(profile.college || "");
         setLocation(profile.location || "");
-        setSkills(profile.skills || "");
-        setLanguages(profile.languages || "");
-        setProfilePhoto(profile.photo_url || "");
+        setSkills(Array.isArray(profile.skills) ? profile.skills : JSON.parse(profile.skills || "[]")); // JSON string'i array'e dönüştür
+        setLanguages(Array.isArray(profile.languages) ? profile.languages : JSON.parse(profile.languages || "[]")); // JSON string'i array'e dönüştür
+        setProfilePhoto(profile.photo_url || null); 
         setBio(profile.bio || "");
         setPhone(profile.phone || "");
         setTokenChecked(true);
@@ -63,67 +170,68 @@ const MenteeProfile = () => {
 
   if (!tokenChecked) return <p>Yükleniyor...</p>;
 
+  const handlePhotoChange = async (newPhotoUrl) => {
+    setProfilePhoto(newPhotoUrl); // Yeni fotoğrafı hemen frontend'de güncelle
+
+    const token = localStorage.getItem("token");
+    try {
+      await axios.put(
+        "http://localhost:5001/profile/me",
+        { photo_url: newPhotoUrl },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      console.log("Profil fotoğrafı güncellendi!");
+    } catch (err) {
+      console.error("Profil fotoğrafı güncellenemedi:", err);
+    }
+  };
+
   const handlePhoneChange = (e) => {
     let phoneNumber = e.target.value;
   
-    // Sadece sayıları kabul et
     phoneNumber = phoneNumber.replace(/\D/g, "");
   
-    // Telefon numarasını doğru formatta göstermek: 5323114597 -> 532 311 4597
     if (phoneNumber.length > 3 && phoneNumber.length <= 6) {
       phoneNumber = phoneNumber.replace(/(\d{3})(\d{1,3})/, "$1 $2");
     } else if (phoneNumber.length > 6) {
       phoneNumber = phoneNumber.replace(/(\d{3})(\d{3})(\d{1,4})/, "$1 $2 $3");
     }
   
-    // Geçerli telefon numarasının 10 rakam olmasına ve 5 ile başlamasına bakıyoruz
-    const phoneRegex = /^5\d{2} \d{3} \d{4}$/; // 5 ile başlar ve ardından 9 rakam gelir
+    const phoneRegex = /^5\d{2} \d{3} \d{4}$/;
   
-    // Eğer telefon geçersizse hata mesajı göster
     if (!phoneRegex.test(phoneNumber) && phoneNumber.length === 12) {
       setPhoneError("Geçersiz telefon numarası formatı.");
     } else if (phoneNumber.length > 12) {
       setPhoneError("Telefon numarası 10 rakamla sınırlıdır.");
-      phoneNumber = phoneNumber.slice(0, 12); // Fazla rakam girilmesin
+      phoneNumber = phoneNumber.slice(0, 12);
     } else {
-      setPhoneError(""); // Geçerli telefon numarası ise hata mesajını sıfırla
+      setPhoneError(""); 
     }
   
-    // Telefon numarasını güncelle
     setPhone(phoneNumber);
   };
   
   const handleSaveClick = async () => {
-    // Telefon numarasını kontrol et
-    const phoneRegex = /^5\d{2} \d{3} \d{4}$/;
-  
-    if (!phoneRegex.test(phone)) {
-      setPhoneError("Geçersiz telefon numarası formatı.");
-      return;
-    } else {
-      setPhoneError(""); // Geçerli telefon numarası ise hata mesajını sıfırla
-    }
-  
     const token = localStorage.getItem("token");
+  
     try {
-      const res = await axios.put(
+      await axios.put(
         "http://localhost:5001/profile/me",
         {
           name,
           surname,
+          bio,
           photo_url: profilePhoto,
+          phone,
           college,
           location,
-          languages,
-          skills,
-          bio,
-          phone,
+          skills: JSON.stringify(skills), // Array'i JSON string'e dönüştür
+          languages: JSON.stringify(languages), // Array'i JSON string'e dönüştür
         },
         {
           headers: { Authorization: `Bearer ${token}` },
         }
       );
-  
       alert("Profil güncellendi");
     } catch (err) {
       console.error("Profil güncelleme hatası:", err.response?.data || err.message);
@@ -131,12 +239,9 @@ const MenteeProfile = () => {
     }
   };
   
-  
-
   return (
     <div className="mentee-profile-container">
       <header>
-        <NavBar2/>
       </header>
 
       <main>
@@ -144,7 +249,10 @@ const MenteeProfile = () => {
           <h1 className="mentee-profile-title">Ayarlar</h1>
           <div className="all-settings-form">
             <div className="photo-settings-card">
-              <ProfilePhotoUpload/>
+              <ProfilePhotoUpload 
+              onPhotoChange = {handlePhotoChange}
+              profilePhoto = {profilePhoto}
+              />
               <ProfileSettingsBar/>
             </div>  
           <div>
@@ -198,6 +306,7 @@ const MenteeProfile = () => {
                 {/* Phone Field */}
                 <div className="profile-settings-phone">
                   <label className="profile-settings-phone-label">Telefon Numarası</label>
+                  <span className="span-required"> *</span>
                   <div className="profile-settings-phone-input-div">
                     <input 
                       type="text" 
@@ -223,68 +332,32 @@ const MenteeProfile = () => {
                 </div>
 
                   <div className="profile-settings-location">
-                    <label className="profile-settings-location-label">Yaşadığınız Şehir</label>
-                    <span className="span-required"> *</span>
                     <div className="profile-settings-location-div">
-
-                      <select 
-                        value={location}
-                        onChange={(e) => setLocation(e.target.value)}
-                        className="profile-settings-industries-input"
-                      >
-                        <option value="" disabled>Şehir Seçin</option>
-                        {cities.map((city) => (
-                          <option key={city} value={city}>{city}</option>
-                        ))}
-                      </select>
+                      <SingleSelectDropdown
+                        options={cities}
+                        selectedOption={location}
+                        setSelectedOption={setLocation}
+                        label="Yaşadığınız Şehir"
+                      />
                     </div>
                   </div>
 
                   <div className="profile-settings-industries">
-                  <label className="profile-settings-industries-label">Yazılım Dilleri</label>
-                  <select 
-                      value={skills}
-                      onChange={(e) => setSkills(e.target.value)}
-                      className="profile-settings-industries-input"
-                  >
-                    <option value="" disabled>Yazılım Dillerinizi Seçin</option>
-                    <option value="C">C</option>
-                    <option value="C++">C++</option>
-                    <option value="C#">C#</option>
-                    <option value="CSS">CSS</option>
-                    <option value="HTML">HTML</option>
-                    <option value="Java">Java</option>
-                    <option value="JavaScript">JavaScript</option>
-                    <option value="Kotlin">Kotlin</option>
-                    <option value="PHP">PHP</option>
-                    <option value="Python">Python</option>
-                    <option value="R">R</option>
-                    <option value="TypeScript">TypeScript</option>
-                  </select>
-                </div>
+                    <CustomDropdown
+                      options={skillOptions}
+                      selectedOptions={skills}
+                      setSelectedOptions={setSkills}
+                      label="Yazılım Dilleri"
+                    />
+                  </div>
                 <div className="profile-settings-languages">
-                  <label className="profile-settings-languages-label">Bilinen Diller</label>
-                  <select 
-                    value={languages}
-                    onChange={(e) => setLanguages(e.target.value)}
-                    className="profile-settings-languages-input"
-                  >
-                    <option value="" disabled>Bir Dil Seçin</option>
-                    <option value="Almanca">Almanca</option>
-                    <option value="Arapça">Arapça</option>
-                    <option value="Çince">Çince (Mandarin)</option>
-                    <option value="Fransızca">Fransızca</option>
-                    <option value="Hintçe">Hintçe</option>
-                    <option value="İngilizce">İngilizce</option>
-                    <option value="İspanyolca">İspanyolca</option>
-                    <option value="İtalyanca">İtalyanca</option>
-                    <option value="Japonca">Japonca</option>
-                    <option value="Korece">Korece</option>
-                    <option value="Portekizce">Portekizce</option>
-                    <option value="Rusça">Rusça</option>
-                    <option value="Türkçe">Türkçe</option>
-                  </select>
-              </div>
+                  <CustomDropdown
+                    options={languageOptions}
+                    selectedOptions={languages}
+                    setSelectedOptions={setLanguages}
+                    label="Bilinen Diller"
+                  />
+                </div>
 
                 <div className="profile-settings-button-save-div">
                   <button 

@@ -3,7 +3,6 @@ import "./BrowseMentors.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import NavBar from "../../components/NavBar/NavBar";
 
 const BrowseMentors = () => {
   const [openMenuIndex, setOpenMenuIndex] = useState(null); // Menülerin hangi index'inin açık olduğunu takip eder.
@@ -109,7 +108,6 @@ const BrowseMentors = () => {
   return (
     <div className="browse-mentors-container">
       <header>
-        <NavBar />
       </header>
       <main>
         <div className="browse-mentors-form-div">

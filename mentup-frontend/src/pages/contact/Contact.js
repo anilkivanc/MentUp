@@ -1,7 +1,5 @@
 import React from "react";
 import './Contact.css';
-import { useNavigate } from "react-router-dom";
-import NavBar from '../../components/NavBar/NavBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
@@ -11,7 +9,6 @@ const Contact = () => {
   return (
     <div className="contact-container">
       <header>
-        <NavBar />
       </header>
       <main>
         <div className="contact-div">

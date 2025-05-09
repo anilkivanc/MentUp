@@ -1,5 +1,5 @@
 .navbar-secondary {
-  background-color: transparent;
+  background-color: #121212;
   border-bottom: 1px solid rgb(59, 59, 59);
 }
 
@@ -19,7 +19,6 @@
   text-decoration: none;
   margin: 0 10px;
   transition: color 0.3s ease-in-out;
-  display: inline-block;
   font-size: 14px;
   font-weight: 550;
 }
@@ -70,6 +69,8 @@
 
 .navbar-secondary-items-right-col {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
 }
 
@@ -77,7 +78,6 @@
   transition: color 0.3s ease;
   border-radius: 100px;
   padding: 8px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
   font-size: 14px;
 }
 
@@ -91,11 +91,12 @@
   flex-direction: row;
 }
 
-.navbar-secondary-options button {
+.navbar-secondary-messages-button,
+.navbar-secondary-notifications-button {
   display: flex;
   align-items: center;
   font-size: 14px;
-  padding: 8px;
+  padding: 10px;
   border-radius: 20px;
   margin-left: 10px;
   border: none;
@@ -111,18 +112,25 @@
 /* Ana dropdown kapsayıcı */
 .navbar-secondary-profile {
   position: relative;
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Dropdown butonunun tasarımı */
 .navbar-secondary-profile-button {
-  background-color: #007bff;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  font-size: 14px;
+  padding: 10px   ;
+  border-radius: 20px;
+  margin-left: 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
   gap: 8px;
 }
 
@@ -132,14 +140,14 @@
   flex-direction: column;
   position: absolute;
   top: 100%;
-  right: 0; /* Menü ekranın sağ kenarına hizalanır */
+  right: 0;
   background-color: #171717;
   border: 1px solid rgb(59, 59, 59);
   border-radius: 4px;
   list-style: none;
   padding: 0;
   margin: 0;
-  min-width: 200px; /* Menü genişliğini belirler */
+  min-width: 200px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
@@ -165,6 +173,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  margin-left: 10px;
 }
 
 .navbar-profile-name {
@@ -191,29 +200,34 @@
 }
 
 /* Menü bağlantı tasarımı */
-.navbar-secondary-dropdown-menu a {
+.navbar-secondary-dropdown-menu-settings,
+.navbar-secondary-dropdown-menu-logout {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   text-decoration: none;
+  background-color: transparent;
   color: #fff;
-  text-align: left; /* Metni sola hizalar */
-  white-space: nowrap; /* Tek satırda tutar, taşarsa kaydırmaz */
-  gap: 10px;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
   padding: 10px;
   font-weight: 500;
   opacity: 1;
-  transform: translateY(0px);
   transition: opacity 0.3s, transform 0.3s;
+  gap: 10px;
+}
 
+.navbar-secondary-dropdown-menu-settings:hover,
+.navbar-secondary-dropdown-menu-logout:hover {
+  background-color: #1d1d1d;
 }
 
 .navbar-secondary-profile-image {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-image: url('../../images/mentor.png');
   background-size: cover;
   background-position: center;
   flex-shrink: 0;

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Yönlendirme için useNavigate
 import './Appointments.css';
-import NavBar2 from '../../components/NavBar2/Navbar2';
 
 const Appointments = () => {
   const navigate = useNavigate(); // useNavigate hook'u
@@ -18,7 +17,6 @@ const Appointments = () => {
   return (
     <div className="appointments-container">
       <header>
-        <NavBar2 />
       </header>
       <main>
         <div className="appointment-form-container">

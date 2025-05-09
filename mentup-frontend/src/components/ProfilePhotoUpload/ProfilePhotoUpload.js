@@ -1,24 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './ProfilePhotoUpload.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 
-const ProfilePhotoUpload = ({ onPhotoChange }) => { // onPhotoChange fonksiyonunu ekleyin
-  const [profilePhoto, setProfilePhoto] = useState(null);
+const ProfilePhotoUpload = ({ onPhotoChange, profilePhoto }) => {  // props ile profilePhoto alıyoruz
+  const [selectedPhoto, setSelectedPhoto] = useState(profilePhoto || null);
 
-  const handlePhotoButtonClick = () => {
-    document.getElementById("fileInput").click();
-  };
+  useEffect(() => {
+    setSelectedPhoto(profilePhoto);
+  }, [profilePhoto]);
 
+  // Fotoğraf değiştiğinde, üst bileşene fotoğraf URL'sini iletiyoruz
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
       const reader = new FileReader();
       reader.onload = () => {
         const photoUrl = reader.result;
-        setProfilePhoto(photoUrl);
-        // Fotoğrafı üst komponentle paylaş
-        if (onPhotoChange) onPhotoChange(photoUrl); 
+        setSelectedPhoto(photoUrl);  // Seçilen fotoğrafı state'e kaydediyoruz
+        if (onPhotoChange) onPhotoChange(photoUrl);  // Fotoğrafı üst bileşene iletiyoruz
       };
       reader.readAsDataURL(file);
     }
@@ -28,8 +28,8 @@ const ProfilePhotoUpload = ({ onPhotoChange }) => { // onPhotoChange fonksiyonun
     <div className="profile-photo-card">
       <div>
         <div className="profile-photo">
-          {profilePhoto ? (
-            <img src={profilePhoto} alt="Profil" className="profile-photo-preview" />
+          {selectedPhoto ? (
+            <img src={selectedPhoto} alt="Profil" className="profile-photo-preview" />
           ) : (
             <FontAwesomeIcon icon={faCircleUser} className="profile-photo-icon" />
           )}
@@ -47,7 +47,7 @@ const ProfilePhotoUpload = ({ onPhotoChange }) => { // onPhotoChange fonksiyonun
         <div className="profile-photo-upload">
           <button
             className="profile-photo-button-upload"
-            onClick={handlePhotoButtonClick}
+            onClick={() => document.getElementById("fileInput").click()}
           >
             Resim Yükle
           </button>

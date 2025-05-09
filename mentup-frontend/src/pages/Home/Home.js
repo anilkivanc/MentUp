@@ -2,10 +2,8 @@ import React from 'react';
 import "./Home.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import NavBar from '../../components/NavBar/NavBar';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import ChatWidget from '../../components/chatWidget/chatWidget';
-import NavBar2 from "../../components/NavBar2/Navbar2";
 
 const Home = () => {
   const handleSearch = () => {
@@ -15,7 +13,6 @@ const Home = () => {
   return (
     <div className='home-container'> 
       <header>
-        <NavBar/>
       </header>
       <main>
         <section className="hero">

@@ -1,12 +1,10 @@
 import React from 'react';
 import './Mentors.css';
-import NavBar from '../../components/NavBar/NavBar';
 
 const Mentors = () => {
   return (
     <div className='mentors-container'>
       <header>
-        <NavBar/>
       </header>
       <main>
         <div className='mentors-section'>

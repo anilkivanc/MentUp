@@ -1,18 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar2.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMessage } from "@fortawesome/free-solid-svg-icons";
-import { faBell } from "@fortawesome/free-solid-svg-icons";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import { faGear } from "@fortawesome/free-solid-svg-icons";
-import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { faMessage, faBell, faUser, faAngleDown, faGear, faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';  // Eğer logout endpoint’in varsa
+import axios from 'axios';
 
 const NavBar2 = () => {  
   const [isDropdownVisible, setDropdownVisible] = useState(false);
+  const [userName, setUserName] = useState('');
+  const [userSurname, setUserSurname] = useState('');
+  const [photo_url, setPhoto_url] = useState('');
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchUserProfile = async () => {
+      try {
+        const token = localStorage.getItem('token');
+        const response = await axios.get('http://localhost:5001/profile/me', {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        setUserName(response.data.name);
+        setUserSurname(response.data.surname);
+        setPhoto_url(response.data.profile.photo_url);
+      } catch (error) {
+        console.error('Error fetching user profile:', error);
+      }
+    };
+
+    fetchUserProfile();
+  }, []);
 
   const handleLogout = async () => {
     try {
@@ -21,19 +37,16 @@ const NavBar2 = () => {
         {}, 
         {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem('token')}`  // Burada düzeltme yapıldı
-          }
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
+          },
         }
       );
     } catch (e) {
       console.warn('Server logout hatası (yine de devam ediyoruz):', e);
     }
 
-    // Client’ta token ve user bilgisini sil
     localStorage.removeItem('token');
     localStorage.removeItem('user');
-
-    // Giriş sayfasına yönlendir
     navigate('/login');
   };
 
@@ -47,7 +60,7 @@ const NavBar2 = () => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     document.addEventListener('click', closeDropdown);
     return () => {
       document.removeEventListener('click', closeDropdown);
@@ -101,33 +114,33 @@ const NavBar2 = () => {
                       className="navbar-secondary-profile-info"
                       href='/menteeprofile'
                     >
-                      <div className='navbar-secondary-profile-image'></div>
+                      <div
+                        className='navbar-secondary-profile-image'
+                        style={{ backgroundImage: `url(${photo_url})` }}  
+                      ></div>
                         <div className="navbar-profile-details">
-                          <span className="navbar-profile-name">Buğra Batur</span>
+                          <span className="navbar-profile-name">{userName} {userSurname}</span>
                           <p className="navbar-view-profile-link">Profili Görüntüle</p>
                         </div>
                     </a>
                   </li>
-                  {/* Profil Bilgileri Üst Kısımda */}
-
-
-                  {/* Menü Öğeleri */}
                   <li>
                     <a
                       className="navbar-secondary-dropdown-menu-settings"
-                      href="/menteeProfile"
+                      href="/accountsettings"
                     >
                       <FontAwesomeIcon
                         icon={faGear}
                         style={{ color: "white", marginRight: "10px" }}
                       />
-                      Ayarlar
+                      Hesap Ayarları
                     </a>
                   </li>
                   <li>
+                    {/* Çıkış Yap Butonunu a'ya çevir ve onClick ile logout işlemi */}
                     <a
                       className="navbar-secondary-dropdown-menu-logout"
-                      href='/login'
+                      onClick={handleLogout}  // Çıkış yapma işlemini tetikliyoruz
                     >
                       <FontAwesomeIcon
                         icon={faArrowRightFromBracket}

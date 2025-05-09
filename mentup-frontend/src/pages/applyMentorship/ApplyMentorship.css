@@ -3,7 +3,7 @@
   background-color: #121212;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   overflow-y: auto;
 }
 
@@ -14,11 +14,42 @@
 }
 
 .apply-mentorship-div-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   margin-top: 20px;
+}
+
+.apply-mentorship-div-title h1 {
   font-size: 30px;
   font-weight: 500;
-  display: block;
-  color: #ffffff;
+  color: #fff;
+}
+
+.apply-mentorship-div-title p {
+  font-size: 20px;
+  font-weight: normal;
+  color: #8e9291;
+  margin-top: 10px;
+}
+
+.apply-mentorship-div-title button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: #8e2e28;
+  color: white;
+  margin-top: 40px;
+}
+
+.apply-mentorship-div-title button:hover {
+  background-color: #96433d;
 }
 
 .apply-mentorship-form {
@@ -43,6 +74,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
 }
 
 .apply-mentorship-name-input,
@@ -60,6 +92,7 @@
   font-size: 14px;
   color: #8e9291;
   font-weight: 600;
+  text-align: left;
 }
 
 .apply-mentorship-name,
@@ -91,7 +124,6 @@
   height: 40px;
   border-radius: 8px;
   border: 1px solid rgb(59, 59, 59);
-  /* background-color: #f9feff; */
   background-color: #1d1d1d;
   margin-top: 5px;
   margin-bottom: 20px;
@@ -129,7 +161,7 @@
 .selected-file-name {
   margin-left: 10px;
   font-style: italic;
-  color: #555;
+  color: #fff;
 }
 
 .selected-file-container {
@@ -141,9 +173,11 @@
 .remove-file-button {
   background: none;
   border: none;
-  color: red;
+  color: rgb(255, 74, 74);
   font-size: 16px;
   cursor: pointer;
+  margin-left: 10px;
+  transition: color 0.3s ease;
 }
 
 .remove-file-button:hover {
@@ -229,4 +263,56 @@
 
 .apply-mentorship-menu-filter ul li:hover {
   background-color: #171717;
+}
+
+.custom-dropdown {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.custom-dropdown-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.custom-dropdown-input {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px;
+  border: 1px solid rgb(59, 59, 59);
+  border-radius: 10px;
+  background-color: #1d1d1d;
+  cursor: pointer;
+  color: #fff;
+}
+
+.custom-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #1d1d1d;
+  border: 1px solid rgb(59, 59, 59);
+  border-radius: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.custom-dropdown-option {
+  padding: 10px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.custom-dropdown-option:hover {
+  background-color: #373737;
+}
+
+.custom-dropdown-option.selected {
+  background-color: #26815b;
+  color: #fff;
 }

@@ -2,13 +2,11 @@ import React from "react";
 import './AboutUs.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle, faUserGraduate, faHandshake, faLightbulb, faUsers } from '@fortawesome/free-solid-svg-icons';
-import NavBar from '../../components/NavBar/NavBar';
 
 const AboutUs = () => {
   return (
     <div className="about-us-container">
       <header>
-        <NavBar />
       </header>
       <main>
         <div className="about-us-div">
