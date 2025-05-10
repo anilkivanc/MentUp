@@ -26,14 +26,22 @@ exports.getOwnProfile = async (req, res) => {
     }
   };
   
-  
-
 // Kullanıcının kendi profilini oluştur/güncelle
 exports.updateOwnProfile = async (req, res) => {
   const userId = req.user.id;
-  const { bio, photo_url, phone, college, location, skills, languages } = req.body;
+  const { name, surname, bio, photo_url, phone, college, location, skills, languages } = req.body;
 
   try {
+    
+    if (name || surname) {
+      const user = await User.findByPk(userId);
+      if (!user) return res.status(404).json({ message: 'Kullanıcı bulunamadı.' });
+      await user.update({
+        ...(name && { name }),
+        ...(surname && { surname })
+      });
+    }
+
     const [profile, created] = await Profile.findOrCreate({
       where: { user_id: userId },
       defaults: { bio, photo_url, phone, verification_status: 'pending' , college, location, skills, languages }
